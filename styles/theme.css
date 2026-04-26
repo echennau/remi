@@ -19,6 +19,14 @@
   --color-warning: var(--color-warning-dark);
   --color-danger: var(--color-danger-dark);
   --color-info: var(--color-info-dark);
+  --color-primary-hover: var(--color-primary-hover-dark);
+  --color-primary-focus: var(--color-primary-focus-dark);
+  --color-primary-active: var(--color-primary-active-dark);
+  --color-primary-disabled: var(--color-primary-disabled-dark);
+  --color-neutral-hover: var(--color-neutral-hover-dark);
+  --color-neutral-focus: var(--color-neutral-focus-dark);
+  --color-neutral-active: var(--color-neutral-active-dark);
+  --color-neutral-disabled: var(--color-neutral-disabled-dark);
 }
 
 [data-theme="light"] {
@@ -40,4 +48,12 @@
   --color-warning: var(--color-warning-light);
   --color-danger: var(--color-danger-light);
   --color-info: var(--color-info-light);
+  --color-primary-hover: var(--color-primary-hover-light);
+  --color-primary-focus: var(--color-primary-focus-light);
+  --color-primary-active: var(--color-primary-active-light);
+  --color-primary-disabled: var(--color-primary-disabled-light);
+  --color-neutral-hover: var(--color-neutral-hover-light);
+  --color-neutral-focus: var(--color-neutral-focus-light);
+  --color-neutral-active: var(--color-neutral-active-light);
+  --color-neutral-disabled: var(--color-neutral-disabled-light);
 }

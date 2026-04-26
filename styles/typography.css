@@ -1,0 +1,110 @@
+@import "./theme.css";
+
+h1 {
+  font: var(--typography-h1);
+  letter-spacing: -0.02em;
+  color: var(--color-fg-emphasis);
+}
+
+h2 {
+  font: var(--typography-h2);
+  letter-spacing: -0.01em;
+  color: var(--color-fg-emphasis);
+}
+
+h3 {
+  font: var(--typography-h3);
+  color: var(--color-fg-default);
+}
+
+h4 {
+  font: var(--typography-h4);
+  color: var(--color-fg-default);
+}
+
+h5,
+.eyebrow {
+  font: var(--typography-eyebrow);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+}
+
+.lede {
+  font: var(--typography-lede);
+  color: var(--color-fg-body);
+}
+
+body,
+p {
+  font: var(--typography-body);
+  color: var(--color-fg-body);
+}
+
+code,
+kbd,
+samp {
+  font: var(--typography-mono);
+  color: var(--color-fg-default);
+}
+
+pre {
+  font: var(--typography-mono);
+  color: var(--color-fg-default);
+  white-space: pre;
+  overflow-x: auto;
+}
+
+small {
+  font: var(--typography-body);
+  color: var(--color-fg-muted);
+}
+
+strong,
+b {
+  color: var(--color-fg-emphasis);
+}
+
+em,
+i,
+cite {
+  color: var(--color-fg-default);
+}
+
+mark {
+  color: var(--color-fg-emphasis);
+  background-color: var(--color-primary-disabled);
+}
+
+del,
+s {
+  color: var(--color-fg-muted);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color var(--duration-sm);
+
+  &:hover {
+    color: var(--color-primary-hover);
+  }
+
+  &:focus-visible {
+    color: var(--color-primary-focus);
+    outline: 2px solid var(--color-primary-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  &:active {
+    color: var(--color-primary-active);
+  }
+
+  &[aria-disabled="true"],
+  &:not([href]) {
+    color: var(--color-primary-disabled);
+    pointer-events: none;
+    text-decoration: none;
+  }
+}

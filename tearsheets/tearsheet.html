@@ -15,8 +15,8 @@
       }
 
       body {
-        background: var(--color-bg-dark-default);
-        color: var(--color-fg-dark-default);
+        background: var(--color-bg-default);
+        color: var(--color-fg-default);
         font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
         font-size: 14px;
         line-height: 1.55;
@@ -33,14 +33,14 @@
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 0.14em;
-        color: var(--color-fg-dark-muted);
+        color: var(--color-fg-muted);
         margin-bottom: 16px;
         padding-bottom: 8px;
-        border-bottom: 1px solid var(--color-neutral-800);
+        border-bottom: 1px solid var(--color-bg-surface);
       }
       .section-sublabel {
         font-size: 11px;
-        color: var(--color-neutral-600);
+        color: var(--color-fg-muted);
         margin: 16px 0 8px;
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -56,7 +56,7 @@
         flex: 1;
         border-radius: 5px;
         overflow: hidden;
-        background: var(--color-neutral-900);
+        background: var(--color-bg-surface);
       }
       .sw-color {
         height: 32px;
@@ -152,6 +152,34 @@
         opacity: 0.6;
       }
 
+      /* bg elevation stack */
+      .bg-elevation {
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 6px;
+      }
+      .elevation-layer {
+        padding: 10px 12px;
+      }
+      .elevation-layer-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 8px;
+      }
+      .elevation-layer-head:last-child {
+        margin-bottom: 0;
+      }
+      .elevation-layer-name {
+        font-size: 9px;
+        font-family: monospace;
+      }
+      .elevation-layer-hex {
+        font-size: 9px;
+        font-family: monospace;
+        opacity: 0.6;
+      }
+
       /* spacing */
       .spacing-row {
         display: flex;
@@ -160,7 +188,7 @@
         margin-bottom: 5px;
       }
       .spacing-bar {
-        background: var(--color-primary-500);
+        background: var(--color-primary);
         border-radius: 2px;
         height: 8px;
         flex-shrink: 0;
@@ -169,28 +197,63 @@
       .spacing-name {
         font-family: monospace;
         font-size: 11px;
-        color: var(--color-neutral-400);
+        color: var(--color-fg-muted);
         width: 110px;
         flex-shrink: 0;
       }
       .spacing-val {
         font-family: monospace;
         font-size: 11px;
-        color: var(--color-neutral-600);
+        color: var(--color-fg-body);
+      }
+
+      /* radius */
+      .radius-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+      }
+      .radius-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .radius-swatch {
+        width: 64px;
+        height: 64px;
+        background: var(--color-primary);
+        opacity: 0.25;
+      }
+      .radius-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+      }
+      .radius-name {
+        font-size: 10px;
+        font-family: monospace;
+        color: var(--color-fg-muted);
+      }
+      .radius-val {
+        font-size: 9px;
+        font-family: monospace;
+        color: var(--color-fg-body);
       }
 
       /* typography */
       .type-row {
         margin-bottom: 20px;
         padding-bottom: 20px;
-        border-bottom: 1px solid var(--color-neutral-800);
+        border-bottom: 1px solid var(--color-bg-surface);
       }
       .type-row:last-child {
         border-bottom: none;
       }
       .type-meta {
         font-size: 10px;
-        color: var(--color-fg-dark-muted);
+        color: var(--color-fg-muted);
         font-family: monospace;
         margin-top: 6px;
       }
@@ -202,7 +265,7 @@
         gap: 16px;
       }
       .shadow-card {
-        background: var(--color-neutral-800);
+        background: var(--color-bg-surface);
         border-radius: 8px;
         padding: 28px 16px;
         display: flex;
@@ -215,11 +278,11 @@
         width: 56px;
         height: 56px;
         border-radius: 8px;
-        background: var(--color-neutral-800);
+        background: var(--color-bg-raised);
       }
       .shadow-name {
         font-size: 10px;
-        color: var(--color-fg-dark-muted);
+        color: var(--color-fg-muted);
         font-family: monospace;
       }
 
@@ -239,16 +302,16 @@
       .ball-col-name {
         font-size: 10px;
         font-family: monospace;
-        color: var(--color-neutral-400);
+        color: var(--color-fg-muted);
       }
       .ball-col-meta {
         font-size: 10px;
         font-family: monospace;
-        color: var(--color-neutral-600);
+        color: var(--color-fg-body);
         white-space: nowrap;
       }
       .ball-track {
-        background: var(--color-neutral-900);
+        background: var(--color-bg-raised);
         border-radius: 8px;
         height: 48px;
         position: relative;
@@ -285,12 +348,28 @@
         }
       }
 
+      /* theme toggle */
+      .theme-toggle {
+        background: var(--color-bg-surface);
+        border: 1px solid var(--color-bg-surface);
+        border-radius: 6px;
+        color: var(--color-fg-muted);
+        cursor: pointer;
+        font-family: monospace;
+        font-size: 11px;
+        padding: 5px 10px;
+        letter-spacing: 0.05em;
+      }
+      .theme-toggle:hover {
+        color: var(--color-fg-default);
+      }
+
       /* footer */
       .ts-footer {
-        border-top: 1px solid var(--color-neutral-800);
+        border-top: 1px solid var(--color-bg-surface);
         padding-top: 16px;
         font-size: 11px;
-        color: var(--color-neutral-600);
+        color: var(--color-fg-muted);
         display: flex;
         justify-content: space-between;
       }
@@ -301,9 +380,9 @@
     <div
       style="
         display: flex;
-        align-items: baseline;
+        align-items: flex-start;
         justify-content: space-between;
-        border-bottom: 1px solid var(--color-neutral-700);
+        border-bottom: 1px solid var(--color-bg-surface);
         padding-bottom: 24px;
         margin-bottom: 48px;
       "
@@ -314,7 +393,7 @@
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.14em;
-            color: var(--color-fg-dark-muted);
+            color: var(--color-fg-muted);
           "
         >
           Design System
@@ -323,7 +402,7 @@
           style="
             font-size: 32px;
             font-weight: 500;
-            color: var(--color-neutral-100);
+            color: var(--color-fg-emphasis);
             letter-spacing: -0.02em;
             text-shadow:
               0 0 32px rgba(255, 121, 59, 0.45),
@@ -333,16 +412,24 @@
           remy
         </div>
       </div>
-      <div
-        style="
-          font-size: 12px;
-          color: var(--color-fg-dark-muted);
-          text-align: right;
-          line-height: 1.8;
-          font-family: monospace;
-        "
-      >
-        tokens_tearsheet.html<br />build/tokens.css
+      <div style="display: flex; align-items: flex-start; gap: 20px;">
+        <button
+          class="theme-toggle"
+          onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'light' ? '' : 'light'"
+        >
+          toggle light / dark
+        </button>
+        <div
+          style="
+            font-size: 12px;
+            color: var(--color-fg-muted);
+            text-align: right;
+            line-height: 1.8;
+            font-family: monospace;
+          "
+        >
+          tokens_tearsheet.html<br />build/tokens.css
+        </div>
       </div>
     </div>
 
@@ -587,28 +674,28 @@
         <div class="sw">
           <div class="sw-color" style="background: #b37000"></div>
           <div class="sw-label">
-            <span class="sw-step">color.gold.light</span
+            <span class="sw-step">color.accent.gold.light</span
             ><span class="sw-hex">#b37000</span>
           </div>
         </div>
         <div class="sw">
           <div class="sw-color" style="background: #a75fb7"></div>
           <div class="sw-label">
-            <span class="sw-step">color.berry.light</span
+            <span class="sw-step">color.accent.berry.light</span
             ><span class="sw-hex">#a75fb7</span>
           </div>
         </div>
         <div class="sw">
           <div class="sw-color" style="background: #00978a"></div>
           <div class="sw-label">
-            <span class="sw-step">color.teal.light</span
+            <span class="sw-step">color.accent.teal.light</span
             ><span class="sw-hex">#00978a</span>
           </div>
         </div>
         <div class="sw">
           <div class="sw-color" style="background: #707d8a"></div>
           <div class="sw-label">
-            <span class="sw-step">color.slate.light</span
+            <span class="sw-step">color.accent.slate.light</span
             ><span class="sw-hex">#707d8a</span>
           </div>
         </div>
@@ -619,28 +706,28 @@
         <div class="sw">
           <div class="sw-color" style="background: #955400"></div>
           <div class="sw-label">
-            <span class="sw-step">color.gold.dark</span
+            <span class="sw-step">color.accent.gold.dark</span
             ><span class="sw-hex">#955400</span>
           </div>
         </div>
         <div class="sw">
           <div class="sw-color" style="background: #8a439a"></div>
           <div class="sw-label">
-            <span class="sw-step">color.berry.dark</span
+            <span class="sw-step">color.accent.berry.dark</span
             ><span class="sw-hex">#8a439a</span>
           </div>
         </div>
         <div class="sw">
           <div class="sw-color" style="background: #007b6f"></div>
           <div class="sw-label">
-            <span class="sw-step">color.teal.dark</span
+            <span class="sw-step">color.accent.teal.dark</span
             ><span class="sw-hex">#007b6f</span>
           </div>
         </div>
         <div class="sw">
           <div class="sw-color" style="background: #55616d"></div>
           <div class="sw-label">
-            <span class="sw-step">color.slate.dark</span
+            <span class="sw-step">color.accent.slate.dark</span
             ><span class="sw-hex">#55616d</span>
           </div>
         </div>
@@ -716,16 +803,13 @@
         <div class="bg-theme">
           <div
             class="bg-card"
-            style="
-              background: var(--color-bg-dark-sunken);
-              border: 1px solid var(--color-neutral-950);
-            "
+            style="background: var(--color-bg-default-dark)"
           >
             <div class="bg-card-head">
               <span
                 class="bg-card-name"
                 style="color: var(--color-neutral-400)"
-                >color.bg.dark.sunken</span
+                >color.bg.default.dark</span
               >
               <span class="bg-card-hex" style="color: var(--color-neutral-500)"
                 >#000000</span
@@ -735,13 +819,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-dark-emphasis)"
+                  style="background: var(--color-fg-emphasis-dark)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-400)"
-                    >fg.dark.emphasis</span
+                    >fg.emphasis.dark</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -752,13 +836,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-dark-default)"
+                  style="background: var(--color-fg-default-dark)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-400)"
-                    >fg.dark.default</span
+                    >fg.default.dark</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -769,13 +853,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-dark-body)"
+                  style="background: var(--color-fg-body-dark)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-400)"
-                    >fg.dark.body</span
+                    >fg.body.dark</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -786,13 +870,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-dark-muted)"
+                  style="background: var(--color-fg-muted-dark)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-400)"
-                    >fg.dark.muted</span
+                    >fg.muted.dark</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -804,192 +888,13 @@
           </div>
           <div
             class="bg-card"
-            style="
-              background: var(--color-bg-dark-default);
-              border: 1px solid var(--color-neutral-800);
-            "
+            style="background: var(--color-bg-surface-dark)"
           >
             <div class="bg-card-head">
               <span
                 class="bg-card-name"
                 style="color: var(--color-neutral-400)"
-                >color.bg.dark.default</span
-              >
-              <span class="bg-card-hex" style="color: var(--color-neutral-500)"
-                >#000000</span
-              >
-            </div>
-            <div class="fg-swatches">
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-dark-emphasis)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-400)"
-                    >fg.dark.emphasis</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#c6beb6</span
-                  >
-                </div>
-              </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-dark-default)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-400)"
-                    >fg.dark.default</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#aaa39b</span
-                  >
-                </div>
-              </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-dark-body)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-400)"
-                    >fg.dark.body</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#8f8881</span
-                  >
-                </div>
-              </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-dark-muted)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-400)"
-                    >fg.dark.muted</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#5d564f</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-card"
-            style="
-              background: var(--color-bg-dark-raised);
-              border: 1px solid var(--color-neutral-800);
-            "
-          >
-            <div class="bg-card-head">
-              <span
-                class="bg-card-name"
-                style="color: var(--color-neutral-400)"
-                >color.bg.dark.raised</span
-              >
-              <span class="bg-card-hex" style="color: var(--color-neutral-500)"
-                >#070301</span
-              >
-            </div>
-            <div class="fg-swatches">
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-dark-emphasis)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-400)"
-                    >fg.dark.emphasis</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#c6beb6</span
-                  >
-                </div>
-              </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-dark-default)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-400)"
-                    >fg.dark.default</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#aaa39b</span
-                  >
-                </div>
-              </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-dark-body)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-400)"
-                    >fg.dark.body</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#8f8881</span
-                  >
-                </div>
-              </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-dark-muted)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-400)"
-                    >fg.dark.muted</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#5d564f</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-card"
-            style="
-              background: var(--color-bg-dark-surface);
-              border: 1px solid var(--color-neutral-700);
-            "
-          >
-            <div class="bg-card-head">
-              <span
-                class="bg-card-name"
-                style="color: var(--color-neutral-400)"
-                >color.bg.dark.surface</span
+                >color.bg.surface.dark</span
               >
               <span class="bg-card-hex" style="color: var(--color-neutral-500)"
                 >#19140e</span
@@ -999,13 +904,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-dark-emphasis)"
+                  style="background: var(--color-fg-emphasis-dark)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-400)"
-                    >fg.dark.emphasis</span
+                    >fg.emphasis.dark</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -1016,13 +921,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-dark-default)"
+                  style="background: var(--color-fg-default-dark)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-400)"
-                    >fg.dark.default</span
+                    >fg.default.dark</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -1033,13 +938,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-dark-body)"
+                  style="background: var(--color-fg-body-dark)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-400)"
-                    >fg.dark.body</span
+                    >fg.body.dark</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -1050,18 +955,218 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-dark-muted)"
+                  style="background: var(--color-fg-muted-dark)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-400)"
-                    >fg.dark.muted</span
+                    >fg.muted.dark</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
                     >#5d564f</span
                   >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-card"
+            style="background: var(--color-bg-sunken-dark)"
+          >
+            <div class="bg-card-head">
+              <span
+                class="bg-card-name"
+                style="color: var(--color-neutral-400)"
+                >color.bg.sunken.dark</span
+              >
+              <span class="bg-card-hex" style="color: var(--color-neutral-500)"
+                >#000000</span
+              >
+            </div>
+            <div class="fg-swatches">
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-emphasis-dark)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-400)"
+                    >fg.emphasis.dark</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#c6beb6</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-default-dark)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-400)"
+                    >fg.default.dark</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#aaa39b</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-body-dark)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-400)"
+                    >fg.body.dark</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#8f8881</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-muted-dark)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-400)"
+                    >fg.muted.dark</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#5d564f</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-card"
+            style="background: var(--color-bg-raised-dark)"
+          >
+            <div class="bg-card-head">
+              <span
+                class="bg-card-name"
+                style="color: var(--color-neutral-400)"
+                >color.bg.raised.dark</span
+              >
+              <span class="bg-card-hex" style="color: var(--color-neutral-500)"
+                >#070301</span
+              >
+            </div>
+            <div class="fg-swatches">
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-emphasis-dark)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-400)"
+                    >fg.emphasis.dark</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#c6beb6</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-default-dark)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-400)"
+                    >fg.default.dark</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#aaa39b</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-body-dark)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-400)"
+                    >fg.body.dark</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#8f8881</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-muted-dark)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-400)"
+                    >fg.muted.dark</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#5d564f</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- dark elevation stack -->
+          <div class="bg-elevation">
+            <div class="elevation-layer" style="background: var(--color-bg-default-dark)">
+              <div class="elevation-layer-head">
+                <span class="elevation-layer-name" style="color: var(--color-neutral-400)">color.bg.default.dark</span>
+                <span class="elevation-layer-hex" style="color: var(--color-neutral-500)">#000000</span>
+              </div>
+              <div class="elevation-layer" style="background: var(--color-bg-surface-dark); border-radius: 6px">
+                <div class="elevation-layer-head">
+                  <span class="elevation-layer-name" style="color: var(--color-neutral-400)">color.bg.surface.dark</span>
+                  <span class="elevation-layer-hex" style="color: var(--color-neutral-500)">#19140e</span>
+                </div>
+                <div style="display: flex; gap: 6px;">
+                  <div class="elevation-layer" style="background: var(--color-bg-sunken-dark); border-radius: 4px; flex: 1">
+                    <div class="elevation-layer-head" style="margin-bottom: 0">
+                      <span class="elevation-layer-name" style="color: var(--color-neutral-400)">color.bg.sunken.dark</span>
+                      <span class="elevation-layer-hex" style="color: var(--color-neutral-500)">#000000</span>
+                    </div>
+                  </div>
+                  <div class="elevation-layer" style="background: var(--color-bg-raised-dark); border-radius: 4px; flex: 1">
+                    <div class="elevation-layer-head" style="margin-bottom: 0">
+                      <span class="elevation-layer-name" style="color: var(--color-neutral-400)">color.bg.raised.dark</span>
+                      <span class="elevation-layer-hex" style="color: var(--color-neutral-500)">#070301</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1072,104 +1177,13 @@
         <div class="bg-theme">
           <div
             class="bg-card"
-            style="
-              background: var(--color-bg-light-sunken);
-              border: 1px solid var(--color-neutral-100);
-            "
+            style="background: var(--color-bg-default-light)"
           >
             <div class="bg-card-head">
               <span
                 class="bg-card-name"
                 style="color: var(--color-neutral-600)"
-                >color.bg.light.sunken</span
-              >
-              <span class="bg-card-hex" style="color: var(--color-neutral-600)"
-                >#c6beb6</span
-              >
-            </div>
-            <div class="fg-swatches">
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-light-emphasis)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-600)"
-                    >fg.light.emphasis</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#000000</span
-                  >
-                </div>
-              </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-light-default)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-600)"
-                    >fg.light.default</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#2e2822</span
-                  >
-                </div>
-              </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-light-body)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-600)"
-                    >fg.light.body</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#453e38</span
-                  >
-                </div>
-              </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-light-muted)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-600)"
-                    >fg.light.muted</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#756e67</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-card"
-            style="
-              background: var(--color-bg-light-default);
-              border: 1px solid var(--color-neutral-100);
-            "
-          >
-            <div class="bg-card-head">
-              <span
-                class="bg-card-name"
-                style="color: var(--color-neutral-600)"
-                >color.bg.light.default</span
+                >color.bg.default.light</span
               >
               <span class="bg-card-hex" style="color: var(--color-neutral-600)"
                 >#e2dad2</span
@@ -1179,13 +1193,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-light-emphasis)"
+                  style="background: var(--color-fg-emphasis-light)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-600)"
-                    >fg.light.emphasis</span
+                    >fg.emphasis.light</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -1196,13 +1210,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-light-default)"
+                  style="background: var(--color-fg-default-light)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-600)"
-                    >fg.light.default</span
+                    >fg.default.light</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -1213,13 +1227,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-light-body)"
+                  style="background: var(--color-fg-body-light)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-600)"
-                    >fg.light.body</span
+                    >fg.body.light</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -1230,13 +1244,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-light-muted)"
+                  style="background: var(--color-fg-muted-light)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-600)"
-                    >fg.light.muted</span
+                    >fg.muted.light</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -1248,16 +1262,183 @@
           </div>
           <div
             class="bg-card"
-            style="
-              background: var(--color-bg-light-raised);
-              border: 1px solid var(--color-neutral-100);
-            "
+            style="background: var(--color-bg-surface-light)"
           >
             <div class="bg-card-head">
               <span
                 class="bg-card-name"
                 style="color: var(--color-neutral-600)"
-                >color.bg.light.raised</span
+                >color.bg.surface.light</span
+              >
+              <span class="bg-card-hex" style="color: var(--color-neutral-600)"
+                >#aaa39b</span
+              >
+            </div>
+            <div class="fg-swatches">
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-emphasis-light)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-600)"
+                    >fg.emphasis.light</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#000000</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-default-light)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-600)"
+                    >fg.default.light</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#2e2822</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-body-light)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-600)"
+                    >fg.body.light</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#453e38</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-muted-light)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-600)"
+                    >fg.muted.light</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#756e67</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-card"
+            style="background: var(--color-bg-sunken-light)"
+          >
+            <div class="bg-card-head">
+              <span
+                class="bg-card-name"
+                style="color: var(--color-neutral-600)"
+                >color.bg.sunken.light</span
+              >
+              <span class="bg-card-hex" style="color: var(--color-neutral-600)"
+                >#c6beb6</span
+              >
+            </div>
+            <div class="fg-swatches">
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-emphasis-light)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-600)"
+                    >fg.emphasis.light</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#000000</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-default-light)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-600)"
+                    >fg.default.light</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#2e2822</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-body-light)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-600)"
+                    >fg.body.light</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#453e38</span
+                  >
+                </div>
+              </div>
+              <div class="fg-dot">
+                <div
+                  class="fg-dot-color"
+                  style="background: var(--color-fg-muted-light)"
+                ></div>
+                <div class="fg-dot-info">
+                  <span
+                    class="fg-dot-name"
+                    style="color: var(--color-neutral-600)"
+                    >fg.muted.light</span
+                  ><span
+                    class="fg-dot-hex"
+                    style="color: var(--color-neutral-500)"
+                    >#756e67</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-card"
+            style="background: var(--color-bg-raised-light)"
+          >
+            <div class="bg-card-head">
+              <span
+                class="bg-card-name"
+                style="color: var(--color-neutral-600)"
+                >color.bg.raised.light</span
               >
               <span class="bg-card-hex" style="color: var(--color-neutral-600)"
                 >#fff7ef</span
@@ -1267,13 +1448,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-light-emphasis)"
+                  style="background: var(--color-fg-emphasis-light)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-600)"
-                    >fg.light.emphasis</span
+                    >fg.emphasis.light</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -1284,13 +1465,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-light-default)"
+                  style="background: var(--color-fg-default-light)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-600)"
-                    >fg.light.default</span
+                    >fg.default.light</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -1301,13 +1482,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-light-body)"
+                  style="background: var(--color-fg-body-light)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-600)"
-                    >fg.light.body</span
+                    >fg.body.light</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -1318,13 +1499,13 @@
               <div class="fg-dot">
                 <div
                   class="fg-dot-color"
-                  style="background: var(--color-fg-light-muted)"
+                  style="background: var(--color-fg-muted-light)"
                 ></div>
                 <div class="fg-dot-info">
                   <span
                     class="fg-dot-name"
                     style="color: var(--color-neutral-600)"
-                    >fg.light.muted</span
+                    >fg.muted.light</span
                   ><span
                     class="fg-dot-hex"
                     style="color: var(--color-neutral-500)"
@@ -1334,90 +1515,32 @@
               </div>
             </div>
           </div>
-          <div
-            class="bg-card"
-            style="
-              background: var(--color-bg-light-surface);
-              border: 1px solid var(--color-neutral-100);
-            "
-          >
-            <div class="bg-card-head">
-              <span
-                class="bg-card-name"
-                style="color: var(--color-neutral-600)"
-                >color.bg.light.surface</span
-              >
-              <span class="bg-card-hex" style="color: var(--color-neutral-600)"
-                >#ffffff</span
-              >
-            </div>
-            <div class="fg-swatches">
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-light-emphasis)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-600)"
-                    >fg.light.emphasis</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#000000</span
-                  >
-                </div>
+
+          <!-- light elevation stack -->
+          <div class="bg-elevation">
+            <div class="elevation-layer" style="background: var(--color-bg-default-light)">
+              <div class="elevation-layer-head">
+                <span class="elevation-layer-name" style="color: var(--color-neutral-600)">color.bg.default.light</span>
+                <span class="elevation-layer-hex" style="color: var(--color-neutral-500)">#e2dad2</span>
               </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-light-default)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-600)"
-                    >fg.light.default</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#2e2822</span
-                  >
+              <div class="elevation-layer" style="background: var(--color-bg-surface-light); border-radius: 6px">
+                <div class="elevation-layer-head">
+                  <span class="elevation-layer-name" style="color: var(--color-neutral-600)">color.bg.surface.light</span>
+                  <span class="elevation-layer-hex" style="color: var(--color-neutral-500)">#aaa39b</span>
                 </div>
-              </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-light-body)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-600)"
-                    >fg.light.body</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#453e38</span
-                  >
-                </div>
-              </div>
-              <div class="fg-dot">
-                <div
-                  class="fg-dot-color"
-                  style="background: var(--color-fg-light-muted)"
-                ></div>
-                <div class="fg-dot-info">
-                  <span
-                    class="fg-dot-name"
-                    style="color: var(--color-neutral-600)"
-                    >fg.light.muted</span
-                  ><span
-                    class="fg-dot-hex"
-                    style="color: var(--color-neutral-500)"
-                    >#756e67</span
-                  >
+                <div style="display: flex; gap: 6px;">
+                  <div class="elevation-layer" style="background: var(--color-bg-sunken-light); border-radius: 4px; flex: 1">
+                    <div class="elevation-layer-head" style="margin-bottom: 0">
+                      <span class="elevation-layer-name" style="color: var(--color-neutral-600)">color.bg.sunken.light</span>
+                      <span class="elevation-layer-hex" style="color: var(--color-neutral-500)">#c6beb6</span>
+                    </div>
+                  </div>
+                  <div class="elevation-layer" style="background: var(--color-bg-raised-light); border-radius: 4px; flex: 1">
+                    <div class="elevation-layer-head" style="margin-bottom: 0">
+                      <span class="elevation-layer-name" style="color: var(--color-neutral-600)">color.bg.raised.light</span>
+                      <span class="elevation-layer-hex" style="color: var(--color-neutral-500)">#fff7ef</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1431,89 +1554,138 @@
     <div class="section">
       <div class="section-label">Spacing / Dimensions</div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.0</span>
-        <div class="spacing-bar" style="width: var(--dimension-0)"></div>
+        <span class="spacing-name">spacing.0</span>
+        <div class="spacing-bar" style="width: var(--spacing-0)"></div>
         <span class="spacing-val">0</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.1</span>
-        <div class="spacing-bar" style="width: var(--dimension-1)"></div>
+        <span class="spacing-name">spacing.1</span>
+        <div class="spacing-bar" style="width: var(--spacing-1)"></div>
         <span class="spacing-val">4px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.2</span>
-        <div class="spacing-bar" style="width: var(--dimension-2)"></div>
+        <span class="spacing-name">spacing.2</span>
+        <div class="spacing-bar" style="width: var(--spacing-2)"></div>
         <span class="spacing-val">8px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.3</span>
-        <div class="spacing-bar" style="width: var(--dimension-3)"></div>
+        <span class="spacing-name">spacing.3</span>
+        <div class="spacing-bar" style="width: var(--spacing-3)"></div>
         <span class="spacing-val">12px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.4</span>
-        <div class="spacing-bar" style="width: var(--dimension-4)"></div>
+        <span class="spacing-name">spacing.4</span>
+        <div class="spacing-bar" style="width: var(--spacing-4)"></div>
         <span class="spacing-val">16px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.5</span>
-        <div class="spacing-bar" style="width: var(--dimension-5)"></div>
+        <span class="spacing-name">spacing.5</span>
+        <div class="spacing-bar" style="width: var(--spacing-5)"></div>
         <span class="spacing-val">20px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.6</span>
-        <div class="spacing-bar" style="width: var(--dimension-6)"></div>
+        <span class="spacing-name">spacing.6</span>
+        <div class="spacing-bar" style="width: var(--spacing-6)"></div>
         <span class="spacing-val">24px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.7</span>
-        <div class="spacing-bar" style="width: var(--dimension-7)"></div>
+        <span class="spacing-name">spacing.7</span>
+        <div class="spacing-bar" style="width: var(--spacing-7)"></div>
         <span class="spacing-val">28px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.8</span>
-        <div class="spacing-bar" style="width: var(--dimension-8)"></div>
+        <span class="spacing-name">spacing.8</span>
+        <div class="spacing-bar" style="width: var(--spacing-8)"></div>
         <span class="spacing-val">32px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.9</span>
-        <div class="spacing-bar" style="width: var(--dimension-9)"></div>
+        <span class="spacing-name">spacing.9</span>
+        <div class="spacing-bar" style="width: var(--spacing-9)"></div>
         <span class="spacing-val">36px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.10</span>
-        <div class="spacing-bar" style="width: var(--dimension-10)"></div>
+        <span class="spacing-name">spacing.10</span>
+        <div class="spacing-bar" style="width: var(--spacing-10)"></div>
         <span class="spacing-val">40px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.11</span>
-        <div class="spacing-bar" style="width: var(--dimension-11)"></div>
+        <span class="spacing-name">spacing.11</span>
+        <div class="spacing-bar" style="width: var(--spacing-11)"></div>
         <span class="spacing-val">44px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.12</span>
-        <div class="spacing-bar" style="width: var(--dimension-12)"></div>
+        <span class="spacing-name">spacing.12</span>
+        <div class="spacing-bar" style="width: var(--spacing-12)"></div>
         <span class="spacing-val">48px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.13</span>
-        <div class="spacing-bar" style="width: var(--dimension-13)"></div>
+        <span class="spacing-name">spacing.13</span>
+        <div class="spacing-bar" style="width: var(--spacing-13)"></div>
         <span class="spacing-val">52px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.14</span>
-        <div class="spacing-bar" style="width: var(--dimension-14)"></div>
+        <span class="spacing-name">spacing.14</span>
+        <div class="spacing-bar" style="width: var(--spacing-14)"></div>
         <span class="spacing-val">56px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.15</span>
-        <div class="spacing-bar" style="width: var(--dimension-15)"></div>
+        <span class="spacing-name">spacing.15</span>
+        <div class="spacing-bar" style="width: var(--spacing-15)"></div>
         <span class="spacing-val">60px</span>
       </div>
       <div class="spacing-row">
-        <span class="spacing-name">dimension.16</span>
-        <div class="spacing-bar" style="width: var(--dimension-16)"></div>
+        <span class="spacing-name">spacing.16</span>
+        <div class="spacing-bar" style="width: var(--spacing-16)"></div>
         <span class="spacing-val">64px</span>
+      </div>
+    </div>
+
+    <!-- RADIUS -->
+    <div class="section">
+      <div class="section-label">Radius</div>
+      <div class="radius-grid">
+        <div class="radius-card">
+          <div class="radius-swatch" style="border-radius: var(--radius-none)"></div>
+          <div class="radius-label">
+            <span class="radius-name">radius.none</span>
+            <span class="radius-val">0px</span>
+          </div>
+        </div>
+        <div class="radius-card">
+          <div class="radius-swatch" style="border-radius: var(--radius-sm)"></div>
+          <div class="radius-label">
+            <span class="radius-name">radius.sm</span>
+            <span class="radius-val">8px</span>
+          </div>
+        </div>
+        <div class="radius-card">
+          <div class="radius-swatch" style="border-radius: var(--radius-md)"></div>
+          <div class="radius-label">
+            <span class="radius-name">radius.md</span>
+            <span class="radius-val">16px</span>
+          </div>
+        </div>
+        <div class="radius-card">
+          <div class="radius-swatch" style="border-radius: var(--radius-lg)"></div>
+          <div class="radius-label">
+            <span class="radius-name">radius.lg</span>
+            <span class="radius-val">24px</span>
+          </div>
+        </div>
+        <div class="radius-card">
+          <div class="radius-swatch" style="border-radius: var(--radius-xl)"></div>
+          <div class="radius-label">
+            <span class="radius-name">radius.xl</span>
+            <span class="radius-val">32px</span>
+          </div>
+        </div>
+        <div class="radius-card">
+          <div class="radius-swatch" style="border-radius: var(--radius-full)"></div>
+          <div class="radius-label">
+            <span class="radius-name">radius.full</span>
+            <span class="radius-val">9999px</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1521,84 +1693,36 @@
     <div class="section">
       <div class="section-label">Typography</div>
       <div class="type-row">
-        <div
-          style="
-            font: var(--typography-h1);
-            letter-spacing: -0.02em;
-            color: var(--color-neutral-100);
-          "
-        >
-          500 56px/1.05 'Space Grotesk', sans-serif
-        </div>
-        <div class="type-meta">typography.h1</div>
+        <h1>Display Heading</h1>
+        <div class="type-meta">typography.h1 — 500 · 56px / 1.05 · −0.02em</div>
       </div>
       <div class="type-row">
-        <div
-          style="
-            font: var(--typography-h2);
-            letter-spacing: -0.01em;
-            color: var(--color-neutral-100);
-          "
-        >
-          500 38px/1.1 'Space Grotesk', sans-serif
-        </div>
-        <div class="type-meta">typography.h2</div>
+        <h2>Section Heading</h2>
+        <div class="type-meta">typography.h2 — 500 · 38px / 1.1 · −0.01em</div>
       </div>
       <div class="type-row">
-        <div
-          style="font: var(--typography-lede); color: var(--color-neutral-200)"
-        >
-          400 24px/1.55 'Space Grotesk', sans-serif
-        </div>
-        <div class="type-meta">typography.lede</div>
+        <p class="lede">Lede text — larger introductory copy used above body paragraphs.</p>
+        <div class="type-meta">typography.lede — 400 · 24px / 1.55</div>
       </div>
       <div class="type-row">
-        <div
-          style="font: var(--typography-h3); color: var(--color-neutral-100)"
-        >
-          500 24px/1.2 'Space Grotesk', sans-serif
-        </div>
-        <div class="type-meta">typography.h3</div>
+        <h3>Subsection Heading</h3>
+        <div class="type-meta">typography.h3 — 500 · 24px / 1.2</div>
       </div>
       <div class="type-row">
-        <div
-          style="font: var(--typography-h4); color: var(--color-neutral-100)"
-        >
-          500 20px/1.2 'Space Grotesk', sans-serif
-        </div>
-        <div class="type-meta">typography.h4</div>
+        <h4>Card or Group Heading</h4>
+        <div class="type-meta">typography.h4 — 500 · 20px / 1.2</div>
       </div>
       <div class="type-row">
-        <div
-          style="
-            font: var(--typography-body);
-            color: var(--color-fg-dark-body);
-          "
-        >
-          400 15px/1.55 'Space Grotesk', sans-serif
-        </div>
-        <div class="type-meta">typography.body</div>
+        <p>Body text is the base reading size used across paragraphs, labels, and UI copy throughout the system.</p>
+        <div class="type-meta">typography.body — 400 · 15px / 1.55</div>
       </div>
       <div class="type-row">
-        <div
-          style="
-            font: var(--typography-eyebrow);
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--color-fg-dark-muted);
-          "
-        >
-          500 12px/1 'Space Grotesk', sans-serif
-        </div>
-        <div class="type-meta">typography.eyebrow</div>
+        <h5>Category Label</h5>
+        <div class="type-meta">typography.eyebrow — 500 · 12px / 1 · 0.14em</div>
       </div>
       <div class="type-row">
-        <div
-          style="font: var(--typography-mono); color: var(--color-primary-300)"
-        >
-          400 13px/1.6 'Source Code Pro', monospace
-        </div>
-        <div class="type-meta">typography.mono</div>
+        <code>const specimen = "Source Code Pro, 13px / 1.6";</code>
+        <div class="type-meta">typography.mono — 400 · 13px / 1.6</div>
       </div>
     </div>
 
@@ -1609,26 +1733,26 @@
         <div class="shadow-card">
           <div
             class="shadow-swatch"
-            style="box-shadow: var(--shadows-sm)"
+            style="box-shadow: var(--shadow-sm)"
           ></div>
-          <span class="shadow-name">shadows.sm</span>
+          <span class="shadow-name">shadow.sm</span>
         </div>
         <div class="shadow-card">
           <div
             class="shadow-swatch"
-            style="box-shadow: var(--shadows-lg)"
+            style="box-shadow: var(--shadow-lg)"
           ></div>
-          <span class="shadow-name">shadows.lg</span>
+          <span class="shadow-name">shadow.lg</span>
         </div>
         <div class="shadow-card">
           <div
             class="shadow-swatch"
             style="
               background: var(--color-primary-400);
-              box-shadow: var(--shadows-glow);
+              box-shadow: var(--shadow-glow);
             "
           ></div>
-          <span class="shadow-name">shadows.glow</span>
+          <span class="shadow-name">shadow.glow</span>
         </div>
       </div>
     </div>
