@@ -16,7 +16,7 @@
         "xl": {
             "$value": "{spacing.8}"
         },
-        "pill": {
+        "full": {
             "$value": "9999px"
         }
     }
