@@ -31,7 +31,7 @@
                     "$value": "{color.neutral.900}"
                 },
                 "light": {
-                    "$value": "{color.neutral.000}"
+                    "$value": "{color.neutral.100}"
                 }
             },
             "surface": {
@@ -39,7 +39,7 @@
                     "$value": "{color.neutral.800}"
                 },
                 "light": {
-                    "$value": "{color.white}"
+                    "$value": "{color.neutral.200}"
                 }
             },
             "sunken": {

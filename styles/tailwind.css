@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+@theme inline {
+  --color-primary: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary-dark);
+  --color-bg-default: var(--color-bg-default-dark);
+  --color-bg-raised: var(--color-bg-raised-dark);
+  --color-bg-surface: var(--color-bg-surface-dark);
+  --color-bg-sunken: var(--color-bg-sunken-dark);
+  --color-fg-default: var(--color-fg-default-dark);
+  --color-fg-emphasis: var(--color-fg-emphasis-dark);
+  --color-fg-body: var(--color-fg-body-dark);
+  --color-fg-muted: var(--color-fg-muted-dark);
+  --color-accent-gold: var(--color-accent-gold-dark);
+  --color-accent-berry: var(--color-accent-berry-dark);
+  --color-accent-teal: var(--color-accent-teal-dark);
+  --color-accent-slate: var(--color-accent-slate-dark);
+  --color-success: var(--color-success-dark);
+  --color-warning: var(--color-warning-dark);
+  --color-danger: var(--color-danger-dark);
+  --color-info: var(--color-info-dark);
+}

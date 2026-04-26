@@ -1,0 +1,43 @@
+@import "../build/tokens.css";
+
+:root {
+  --color-primary: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary-dark);
+  --color-bg-default: var(--color-bg-default-dark);
+  --color-bg-raised: var(--color-bg-raised-dark);
+  --color-bg-surface: var(--color-bg-surface-dark);
+  --color-bg-sunken: var(--color-bg-sunken-dark);
+  --color-fg-default: var(--color-fg-default-dark);
+  --color-fg-emphasis: var(--color-fg-emphasis-dark);
+  --color-fg-body: var(--color-fg-body-dark);
+  --color-fg-muted: var(--color-fg-muted-dark);
+  --color-accent-gold: var(--color-accent-gold-dark);
+  --color-accent-berry: var(--color-accent-berry-dark);
+  --color-accent-teal: var(--color-accent-teal-dark);
+  --color-accent-slate: var(--color-accent-slate-dark);
+  --color-success: var(--color-success-dark);
+  --color-warning: var(--color-warning-dark);
+  --color-danger: var(--color-danger-dark);
+  --color-info: var(--color-info-dark);
+}
+
+[data-theme="light"] {
+  --color-primary: var(--color-primary-light);
+  --color-secondary: var(--color-secondary-light);
+  --color-bg-default: var(--color-bg-default-light);
+  --color-bg-raised: var(--color-bg-raised-light);
+  --color-bg-surface: var(--color-bg-surface-light);
+  --color-bg-sunken: var(--color-bg-sunken-light);
+  --color-fg-default: var(--color-fg-default-light);
+  --color-fg-emphasis: var(--color-fg-emphasis-light);
+  --color-fg-body: var(--color-fg-body-light);
+  --color-fg-muted: var(--color-fg-muted-light);
+  --color-accent-gold: var(--color-accent-gold-light);
+  --color-accent-berry: var(--color-accent-berry-light);
+  --color-accent-teal: var(--color-accent-teal-light);
+  --color-accent-slate: var(--color-accent-slate-light);
+  --color-success: var(--color-success-light);
+  --color-warning: var(--color-warning-light);
+  --color-danger: var(--color-danger-light);
+  --color-info: var(--color-info-light);
+}

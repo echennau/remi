@@ -8,13 +8,13 @@
     "license": "ISC",
     "author": "Ethan Chennault",
     "type": "module",
-    "main": "build.js",
     "scripts": {
-        "build": "node ./build.js"
+        "build": "style-dictionary build --config config.json"
     },
     "devDependencies": {
         "@playwright/test": "^1.59.1",
-        "sd-tailwindcss-transformer": "^2.2.1",
-        "style-dictionary": "^5.4.0"
+        "@tailwindcss/cli": "^4.2.4",
+        "style-dictionary": "^5.4.0",
+        "tailwindcss": "^4.2.4"
     }
 }
