@@ -1,0 +1,8 @@
+{
+    "duration": {
+        "$type": "duration",
+        "short":  { "$value": "100ms" },
+        "medium": { "$value": "300ms" },
+        "long":   { "$value": "600ms" }
+    }
+}

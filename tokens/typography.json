@@ -1,0 +1,72 @@
+{
+    "typography": {
+        "$type": "typography",
+        "h1": {
+            "$value": {
+                "fontFamily": "Space Grotesk, sans-serif",
+                "fontWeight": "500",
+                "fontSize": "56px",
+                "lineHeight": "1.05",
+                "letterSpacing": "-0.02em"
+            }
+        },
+        "h2": {
+            "$value": {
+                "fontFamily": "Space Grotesk, sans-serif",
+                "fontWeight": "500",
+                "fontSize": "38px",
+                "lineHeight": "1.1",
+                "letterSpacing": "-0.01em"
+            }
+        },
+        "lede": {
+            "$value": {
+                "fontFamily": "Space Grotesk, sans-serif",
+                "fontWeight": "400",
+                "fontSize": "24px",
+                "lineHeight": "1.55"
+            }
+        },
+        "h3": {
+            "$value": {
+                "fontFamily": "Space Grotesk, sans-serif",
+                "fontWeight": "500",
+                "fontSize": "24px",
+                "lineHeight": "1.2"
+            }
+        },
+        "h4": {
+            "$value": {
+                "fontFamily": "Space Grotesk, sans-serif",
+                "fontWeight": "500",
+                "fontSize": "20px",
+                "lineHeight": "1.2"
+            }
+        },
+        "body": {
+            "$value": {
+                "fontFamily": "Space Grotesk, sans-serif",
+                "fontWeight": "400",
+                "fontSize": "15px",
+                "lineHeight": "1.55"
+            }
+        },
+        "eyebrow": {
+            "$value": {
+                "fontFamily": "Space Grotesk, sans-serif",
+                "fontWeight": "500",
+                "fontSize": "12px",
+                "lineHeight": "1",
+                "letterSpacing": "0.14em"
+            }
+        },
+        "mono": {
+            "$value": {
+                "fontFamily": "Source Code Pro, monospace",
+                "fontWeight": "400",
+                "fontSize": "13px",
+                "lineHeight": "1.6"
+            }
+        }
+    }
+}
