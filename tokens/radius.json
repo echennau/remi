@@ -1,0 +1,23 @@
+{
+    "radius": {
+        "$type": "dimension",
+        "none": {
+            "$value": "{spacing.0}"
+        },
+        "sm": {
+            "$value": "{spacing.2}"
+        },
+        "md": {
+            "$value": "{spacing.4}"
+        },
+        "lg": {
+            "$value": "{spacing.6}"
+        },
+        "xl": {
+            "$value": "{spacing.8}"
+        },
+        "pill": {
+            "$value": "9999px"
+        }
+    }
+}

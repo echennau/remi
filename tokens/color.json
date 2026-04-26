@@ -77,36 +77,38 @@
                 "$value": "#4d1800"
             }
         },
-        "gold": {
-            "light": {
-                "$value": "#b37000"
+        "accent": {
+            "gold": {
+                "light": {
+                    "$value": "#b37000"
+                },
+                "dark": {
+                    "$value": "#955400"
+                }
             },
-            "dark": {
-                "$value": "#955400"
-            }
-        },
-        "berry": {
-            "light": {
-                "$value": "#a75fb7"
+            "berry": {
+                "light": {
+                    "$value": "#a75fb7"
+                },
+                "dark": {
+                    "$value": "#8a439a"
+                }
             },
-            "dark": {
-                "$value": "#8a439a"
-            }
-        },
-        "teal": {
-            "light": {
-                "$value": "#00978a"
+            "teal": {
+                "light": {
+                    "$value": "#00978a"
+                },
+                "dark": {
+                    "$value": "#007b6f"
+                }
             },
-            "dark": {
-                "$value": "#007b6f"
-            }
-        },
-        "slate": {
-            "light": {
-                "$value": "#707d8a"
-            },
-            "dark": {
-                "$value": "#55616d"
+            "slate": {
+                "light": {
+                    "$value": "#707d8a"
+                },
+                "dark": {
+                    "$value": "#55616d"
+                }
             }
         },
         "success": {
@@ -139,66 +141,6 @@
             },
             "dark": {
                 "$value": "#006bab"
-            }
-        },
-        "bg": {
-            "dark": {
-                "default": {
-                    "$value": "{color.neutral.950}"
-                },
-                "raised": {
-                    "$value": "{color.neutral.900}"
-                },
-                "surface": {
-                    "$value": "{color.neutral.800}"
-                },
-                "sunken": {
-                    "$value": "{color.neutral.950}"
-                }
-            },
-            "light": {
-                "default": {
-                    "$value": "{color.neutral.050}"
-                },
-                "raised": {
-                    "$value": "{color.neutral.000}"
-                },
-                "surface": {
-                    "$value": "#ffffff"
-                },
-                "sunken": {
-                    "$value": "{color.neutral.100}"
-                }
-            }
-        },
-        "fg": {
-            "dark": {
-                "default": {
-                    "$value": "{color.neutral.200}"
-                },
-                "emphasis": {
-                    "$value": "{color.neutral.100}"
-                },
-                "body": {
-                    "$value": "{color.neutral.300}"
-                },
-                "muted": {
-                    "$value": "{color.neutral.500}"
-                }
-            },
-            "light": {
-                "default": {
-                    "$value": "{color.neutral.700}"
-                },
-                "emphasis": {
-                    "$value": "{color.neutral.950}"
-                },
-                "body": {
-                    "$value": "{color.neutral.600}"
-                },
-                "muted": {
-                    "$value": "{color.neutral.400}"
-                }
             }
         }
     }
