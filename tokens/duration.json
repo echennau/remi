@@ -1,8 +1,17 @@
 {
     "duration": {
         "$type": "duration",
-        "short":  { "$value": "100ms" },
-        "medium": { "$value": "300ms" },
-        "long":   { "$value": "600ms" }
+        "sm": {
+            "$value": "100ms"
+        },
+        "md": {
+            "$value": "250ms"
+        },
+        "lg": {
+            "$value": "500ms"
+        },
+        "xl": {
+            "$value": "800ms"
+        }
     }
 }
