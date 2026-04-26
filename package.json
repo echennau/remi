@@ -1,0 +1,20 @@
+{
+    "name": "remy",
+    "version": "1.0.0",
+    "description": "Remy Design System",
+    "keywords": [
+        "design"
+    ],
+    "license": "ISC",
+    "author": "Ethan Chennault",
+    "type": "module",
+    "main": "build.js",
+    "scripts": {
+        "build": "node ./build.js"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.59.1",
+        "sd-tailwindcss-transformer": "^2.2.1",
+        "style-dictionary": "^5.4.0"
+    }
+}
