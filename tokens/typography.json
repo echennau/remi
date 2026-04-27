@@ -43,7 +43,7 @@
         },
         "body": {
             "$value": {
-                "fontFamily": "Space Grotesk, sans-serif",
+                "fontFamily": "Montserrat, sans",
                 "fontWeight": "400",
                 "fontSize": "15px",
                 "lineHeight": "1.55"

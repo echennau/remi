@@ -22,6 +22,16 @@
                     "format": "javascript/es6"
                 }
             ]
+        },
+        "json": {
+            "transformGroup": "js",
+            "buildPath": "dist/tokens/",
+            "files": [
+                {
+                    "destination": "tokens.json",
+                    "format": "json/nested"
+                }
+            ]
         }
     }
 }
