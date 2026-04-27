@@ -2,6 +2,7 @@
 @import "./theme.css";
 
 @theme inline {
+  /* semantic colors - dark default, switched via [data-theme="light"] */
   --color-primary: var(--color-primary-dark);
   --color-secondary: var(--color-secondary-dark);
   --color-bg-default: var(--color-bg-default-dark);
@@ -20,4 +21,113 @@
   --color-warning: var(--color-warning-dark);
   --color-danger: var(--color-danger-dark);
   --color-info: var(--color-info-dark);
+  --color-primary-hover: var(--color-primary-hover-dark);
+  --color-primary-focus: var(--color-primary-focus-dark);
+  --color-primary-active: var(--color-primary-active-dark);
+  --color-primary-disabled: var(--color-primary-disabled-dark);
+  --color-neutral-hover: var(--color-neutral-hover-dark);
+  --color-neutral-focus: var(--color-neutral-focus-dark);
+  --color-neutral-active: var(--color-neutral-active-dark);
+  --color-neutral-disabled: var(--color-neutral-disabled-dark);
+
+  /* raw color palette */
+  --color-black: var(--color-black);
+  --color-white: var(--color-white);
+  --color-neutral-050: var(--color-neutral-050);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-200: var(--color-neutral-200);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-400: var(--color-neutral-400);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-900: var(--color-neutral-900);
+  --color-neutral-950: var(--color-neutral-950);
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+
+  /* spacing */
+  --spacing-0: var(--spacing-0);
+  --spacing-1: var(--spacing-1);
+  --spacing-2: var(--spacing-2);
+  --spacing-3: var(--spacing-3);
+  --spacing-4: var(--spacing-4);
+  --spacing-5: var(--spacing-5);
+  --spacing-6: var(--spacing-6);
+  --spacing-7: var(--spacing-7);
+  --spacing-8: var(--spacing-8);
+  --spacing-9: var(--spacing-9);
+  --spacing-10: var(--spacing-10);
+  --spacing-11: var(--spacing-11);
+  --spacing-12: var(--spacing-12);
+  --spacing-13: var(--spacing-13);
+  --spacing-14: var(--spacing-14);
+  --spacing-15: var(--spacing-15);
+  --spacing-16: var(--spacing-16);
+
+  /* border radius */
+  --radius-none: var(--radius-none);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-full);
+
+  /* shadows */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-glow: var(--shadow-glow);
+
+  /* transition durations */
+  --duration-sm: var(--duration-sm);
+  --duration-md: var(--duration-md);
+  --duration-lg: var(--duration-lg);
+  --duration-xl: var(--duration-xl);
+}
+
+/* typography utilities - composite font shorthand tokens */
+@utility type-h1 {
+  font: var(--typography-h1);
+  letter-spacing: -0.02em;
+}
+
+@utility type-h2 {
+  font: var(--typography-h2);
+  letter-spacing: -0.01em;
+}
+
+@utility type-h3 {
+  font: var(--typography-h3);
+}
+
+@utility type-h4 {
+  font: var(--typography-h4);
+}
+
+@utility type-lede {
+  font: var(--typography-lede);
+}
+
+@utility type-body {
+  font: var(--typography-body);
+}
+
+@utility type-eyebrow {
+  font: var(--typography-eyebrow);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility type-mono {
+  font: var(--typography-mono);
 }
