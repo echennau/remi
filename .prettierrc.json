@@ -1,0 +1,11 @@
+{
+  "singleQuote": false,
+  "overrides": [
+    {
+      "files": "*.css",
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}

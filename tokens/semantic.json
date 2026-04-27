@@ -1,155 +1,155 @@
 {
-    "color": {
-        "$type": "color",
-        "primary": {
-            "dark": {
-                "$value": "{color.primary.500}"
-            },
-            "light": {
-                "$value": "{color.primary.400}"
-            },
-            "hover": {
-                "dark": {
-                    "$value": "{color.primary.400}"
-                },
-                "light": {
-                    "$value": "{color.primary.500}"
-                }
-            },
-            "focus": {
-                "dark": {
-                    "$value": "{color.primary.500}"
-                },
-                "light": {
-                    "$value": "{color.primary.400}"
-                }
-            },
-            "active": {
-                "dark": {
-                    "$value": "{color.primary.600}"
-                },
-                "light": {
-                    "$value": "{color.primary.600}"
-                }
-            },
-            "disabled": {
-                "dark": {
-                    "$value": "{color.primary.800}"
-                },
-                "light": {
-                    "$value": "{color.primary.200}"
-                }
-            }
+  "color": {
+    "$type": "color",
+    "primary": {
+      "dark": {
+        "$value": "{color.primary.500}"
+      },
+      "light": {
+        "$value": "{color.primary.400}"
+      },
+      "hover": {
+        "dark": {
+          "$value": "{color.primary.400}"
         },
-        "secondary": {
-            "dark": {
-                "$value": "{color.primary.400}"
-            },
-            "light": {
-                "$value": "{color.primary.500}"
-            }
-        },
-        "bg": {
-            "default": {
-                "dark": {
-                    "$value": "{color.neutral.900}"
-                },
-                "light": {
-                    "$value": "{color.neutral.100}"
-                }
-            },
-            "surface": {
-                "dark": {
-                    "$value": "{color.neutral.800}"
-                },
-                "light": {
-                    "$value": "{color.neutral.200}"
-                }
-            },
-            "raised": {
-                "dark": {
-                    "$value": "{color.neutral.700}"
-                },
-                "light": {
-                    "$value": "{color.neutral.300}"
-                }
-            },
-            "sunken": {
-                "dark": {
-                    "$value": "{color.neutral.950}"
-                },
-                "light": {
-                    "$value": "{color.neutral.050}"
-                }
-            }
-        },
-        "neutral": {
-            "hover": {
-                "dark": {
-                    "$value": "{color.neutral.700}"
-                },
-                "light": {
-                    "$value": "{color.neutral.200}"
-                }
-            },
-            "focus": {
-                "dark": {
-                    "$value": "{color.neutral.700}"
-                },
-                "light": {
-                    "$value": "{color.neutral.200}"
-                }
-            },
-            "active": {
-                "dark": {
-                    "$value": "{color.neutral.600}"
-                },
-                "light": {
-                    "$value": "{color.neutral.300}"
-                }
-            },
-            "disabled": {
-                "dark": {
-                    "$value": "{color.neutral.800}"
-                },
-                "light": {
-                    "$value": "{color.neutral.100}"
-                }
-            }
-        },
-        "fg": {
-            "default": {
-                "dark": {
-                    "$value": "{color.neutral.200}"
-                },
-                "light": {
-                    "$value": "{color.neutral.700}"
-                }
-            },
-            "emphasis": {
-                "dark": {
-                    "$value": "{color.neutral.100}"
-                },
-                "light": {
-                    "$value": "{color.neutral.950}"
-                }
-            },
-            "body": {
-                "dark": {
-                    "$value": "{color.neutral.300}"
-                },
-                "light": {
-                    "$value": "{color.neutral.600}"
-                }
-            },
-            "muted": {
-                "dark": {
-                    "$value": "{color.neutral.500}"
-                },
-                "light": {
-                    "$value": "{color.neutral.400}"
-                }
-            }
+        "light": {
+          "$value": "{color.primary.500}"
         }
+      },
+      "focus": {
+        "dark": {
+          "$value": "{color.primary.500}"
+        },
+        "light": {
+          "$value": "{color.primary.400}"
+        }
+      },
+      "active": {
+        "dark": {
+          "$value": "{color.primary.600}"
+        },
+        "light": {
+          "$value": "{color.primary.600}"
+        }
+      },
+      "disabled": {
+        "dark": {
+          "$value": "{color.primary.800}"
+        },
+        "light": {
+          "$value": "{color.primary.200}"
+        }
+      }
+    },
+    "secondary": {
+      "dark": {
+        "$value": "{color.primary.400}"
+      },
+      "light": {
+        "$value": "{color.primary.500}"
+      }
+    },
+    "bg": {
+      "default": {
+        "dark": {
+          "$value": "{color.neutral.900}"
+        },
+        "light": {
+          "$value": "{color.neutral.100}"
+        }
+      },
+      "surface": {
+        "dark": {
+          "$value": "{color.neutral.800}"
+        },
+        "light": {
+          "$value": "{color.neutral.200}"
+        }
+      },
+      "raised": {
+        "dark": {
+          "$value": "{color.neutral.700}"
+        },
+        "light": {
+          "$value": "{color.neutral.300}"
+        }
+      },
+      "sunken": {
+        "dark": {
+          "$value": "{color.neutral.950}"
+        },
+        "light": {
+          "$value": "{color.neutral.050}"
+        }
+      }
+    },
+    "neutral": {
+      "hover": {
+        "dark": {
+          "$value": "{color.neutral.700}"
+        },
+        "light": {
+          "$value": "{color.neutral.200}"
+        }
+      },
+      "focus": {
+        "dark": {
+          "$value": "{color.neutral.700}"
+        },
+        "light": {
+          "$value": "{color.neutral.200}"
+        }
+      },
+      "active": {
+        "dark": {
+          "$value": "{color.neutral.600}"
+        },
+        "light": {
+          "$value": "{color.neutral.300}"
+        }
+      },
+      "disabled": {
+        "dark": {
+          "$value": "{color.neutral.800}"
+        },
+        "light": {
+          "$value": "{color.neutral.100}"
+        }
+      }
+    },
+    "fg": {
+      "default": {
+        "dark": {
+          "$value": "{color.neutral.200}"
+        },
+        "light": {
+          "$value": "{color.neutral.700}"
+        }
+      },
+      "emphasis": {
+        "dark": {
+          "$value": "{color.neutral.100}"
+        },
+        "light": {
+          "$value": "{color.neutral.950}"
+        }
+      },
+      "body": {
+        "dark": {
+          "$value": "{color.neutral.300}"
+        },
+        "light": {
+          "$value": "{color.neutral.600}"
+        }
+      },
+      "muted": {
+        "dark": {
+          "$value": "{color.neutral.500}"
+        },
+        "light": {
+          "$value": "{color.neutral.400}"
+        }
+      }
     }
+  }
 }

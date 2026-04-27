@@ -1,17 +1,17 @@
 {
-    "duration": {
-        "$type": "duration",
-        "sm": {
-            "$value": "100ms"
-        },
-        "md": {
-            "$value": "250ms"
-        },
-        "lg": {
-            "$value": "500ms"
-        },
-        "xl": {
-            "$value": "800ms"
-        }
+  "duration": {
+    "$type": "duration",
+    "sm": {
+      "$value": "100ms"
+    },
+    "md": {
+      "$value": "250ms"
+    },
+    "lg": {
+      "$value": "500ms"
+    },
+    "xl": {
+      "$value": "800ms"
     }
+  }
 }
