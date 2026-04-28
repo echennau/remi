@@ -35,6 +35,7 @@ jobs:
         run: |
           mkdir _site
           cp -r tearsheet styles fonts dist _site/
+          mv _site/tearsheet/tearsheet.html _site/index.html
           touch _site/.nojekyll
 
       - uses: actions/configure-pages@v5
