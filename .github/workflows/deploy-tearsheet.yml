@@ -34,9 +34,8 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          cp -r styles fonts dist _site/
-          cp tearsheet/tearsheet.css tearsheet/tearsheet-render.js _site/
-          cp tearsheet/tearsheet.html _site/index.html
+          cp -r tearsheet styles fonts dist _site/
+          echo '<meta http-equiv="refresh" content="0; url=tearsheet/tearsheet.html">' > _site/index.html
           touch _site/.nojekyll
 
       - uses: actions/configure-pages@v5
