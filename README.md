@@ -99,5 +99,6 @@ To optimize font loading, add the following to your HTML `<head>`. The exact pat
 npm run build
 ```
 
-This runs Style Dictionary to compile tokens into `dist/tokens/`, then copies the stylesheets to `dist/styles/`.
-`package.json` then exports all files from `dist`.
+This runs Style Dictionary to compile tokens into `dist/tokens/`, then copies the stylesheets to `dist/styles/`, fonts to `dist/fonts/`, and `tailwind.css` to `dist/tailwind.css`.
+
+All files are exported from `dist` as specified in `package.json`.
