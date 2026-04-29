@@ -34,7 +34,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          cp -r tearsheet styles fonts dist _site/
+          cp -r tearsheet dist _site/
           echo '<meta http-equiv="refresh" content="0; url=tearsheet/tearsheet.html">' > _site/index.html
           touch _site/.nojekyll
 

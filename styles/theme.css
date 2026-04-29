@@ -1,4 +1,4 @@
-@import "../dist/tokens/tokens.css";
+@import "../tokens/tokens.css";
 
 :root {
   --color-primary: var(--color-primary-dark);
