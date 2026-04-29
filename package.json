@@ -1,6 +1,6 @@
 {
     "name": "@echennau/remi",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Remi Design System",
     "repository": {
         "type": "git",
@@ -27,8 +27,8 @@
         "./*": "./dist/*"
     },
     "scripts": {
-        "build": "rm -rf dist && style-dictionary build --verbose && cp -r ./styles ./dist && cp -r ./fonts ./dist",
-        "serve": "npm run build && http-server . -p 3000 -o /tearsheet/tearsheet.html -c-1",
+        "build": "rm -rf dist && style-dictionary build --verbose && cp -r ./styles ./dist && cp -r ./fonts ./dist && cp ./tailwind.css ./dist/tailwind.css",
+        "tearsheet": "npm run build && http-server . -p 3000 -o /tearsheet/tearsheet.html -c-1",
         "format": "prettier --write .",
         "prepare": "npm run build",
         "prepublishOnly": "npm run format"
