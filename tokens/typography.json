@@ -7,6 +7,11 @@
         "fontWeight": "500",
         "fontSize": "56px",
         "lineHeight": "1.05"
+      },
+      "$extensions": {
+        "remi": {
+          "letterSpacing": "-0.02em"
+        }
       }
     },
     "h2": {
@@ -15,6 +20,11 @@
         "fontWeight": "500",
         "fontSize": "38px",
         "lineHeight": "1.1"
+      },
+      "$extensions": {
+        "remi": {
+          "letterSpacing": "-0.01em"
+        }
       }
     },
     "lede": {
@@ -55,6 +65,12 @@
         "fontWeight": "500",
         "fontSize": "12px",
         "lineHeight": "1"
+      },
+      "$extensions": {
+        "remi": {
+          "letterSpacing": "0.14em",
+          "textTransform": "uppercase"
+        }
       }
     },
     "mono": {

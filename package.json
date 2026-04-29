@@ -1,44 +1,44 @@
 {
-    "name": "@echennau/remi",
-    "version": "1.0.4",
-    "description": "Remi Design System",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/echennau/remi.git"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "keywords": [
-        "design",
-        "design-system",
-        "css",
-        "design-tokens"
-    ],
-    "license": "ISC",
-    "author": "Ethan Chennault",
-    "type": "module",
-    "files": [
-        "dist"
-    ],
-    "style": "./dist/styles/index.css",
-    "exports": {
-        ".": "./dist/styles/index.css",
-        "./*": "./dist/*"
-    },
-    "scripts": {
-        "build": "rm -rf dist && style-dictionary build --verbose && cp -r ./styles ./dist && cp -r ./fonts ./dist && cp ./tailwind.css ./dist/tailwind.css",
-        "tearsheet": "npm run build && http-server . -p 3000 -o /tearsheet/tearsheet.html -c-1",
-        "format": "prettier --write .",
-        "prepare": "npm run build",
-        "prepublishOnly": "npm run format"
-    },
-    "devDependencies": {
-        "@playwright/test": "^1.59.1",
-        "@tailwindcss/cli": "^4.2.4",
-        "http-server": "^14.1.1",
-        "prettier": "^3.8.3",
-        "style-dictionary": "^5.4.0",
-        "tailwindcss": "^4.2.4"
-    }
+  "name": "@echennau/remi",
+  "version": "1.0.4",
+  "description": "Remi Design System",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/echennau/remi.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "design",
+    "design-system",
+    "css",
+    "design-tokens"
+  ],
+  "license": "ISC",
+  "author": "Ethan Chennault",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "style": "./dist/styles/index.css",
+  "exports": {
+    ".": "./dist/styles/index.css",
+    "./*": "./dist/*"
+  },
+  "scripts": {
+    "build": "rm -rf dist && node build.js && cp -r ./styles ./dist && cp -r ./fonts ./dist",
+    "tearsheet": "npm run build && http-server . -p 3000 -o /tearsheet/tearsheet.html -c-1",
+    "format": "prettier --write .",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run format"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@tailwindcss/cli": "^4.2.4",
+    "http-server": "^14.1.1",
+    "prettier": "^3.8.3",
+    "style-dictionary": "^5.4.0",
+    "tailwindcss": "^4.2.4"
+  }
 }
