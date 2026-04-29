@@ -1,3 +1,2 @@
 @import "./theme.css" layer(base);
-@import "./tailwind.css" layer(base);
 @import "./typography.css" layer(base);

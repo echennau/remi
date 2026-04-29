@@ -14,23 +14,31 @@ npm install @echennau/remi
 
 ### Import into your project
 
+These imports require a bundler (Vite, webpack, etc.) or TailwindCSS v4. Without one, reference the files directly, such as `./node_modules/@echennau/remi/dist/styles/index.css`.
+
 #### Stylesheet
 
-Includes all tokens, base theming, and Tailwind utility classes.
+Includes all design tokens, base theming, and typography styles.
 
 ```css
 @import "@echennau/remi";
 ```
 
-Or import individual components:
+Or, import individual stylesheets:
 
 ```css
 /* CSS variables, automatically themed */
-@import "@echennau/remi/dist/styles/theme.css";
-/* Tailwind utility classes */
-@import "@echennau/remi/dist/styles/tailwind.css";
+@import "@echennau/remi/styles/theme.css";
 /* Tag-level typography styles */
-@import "@echennau/remi/dist/styles/typography.css";
+@import "@echennau/remi/styles/typography.css";
+```
+
+#### Tailwind config
+
+If you want Tailwind utility classes and the `@theme` configuration, import it separately:
+
+```css
+@import "@echennau/remi/tailwind.css";
 ```
 
 #### Tokens only
