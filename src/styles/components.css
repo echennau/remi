@@ -488,6 +488,7 @@ summary {
   }
 }
 
+/* TODO: add padding to code. using code tag alone doesn't have good looking padding */
 code {
   background: var(--color-bg-surface);
   border-radius: var(--radius-sm);
