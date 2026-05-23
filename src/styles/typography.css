@@ -21,6 +21,19 @@
   font-weight: 100 900;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
 /* Unless otherwise specified, apply body font */
 * {
   font: var(--typography-body);
@@ -83,6 +96,7 @@ pre {
 
 small {
   font: var(--typography-body);
+  font-size: 11px;
   color: var(--color-fg-muted);
 }
 
@@ -109,7 +123,7 @@ s {
 
 a {
   color: var(--color-primary);
-  text-decoration: underline;
+  text-decoration: none;
   transition: color var(--duration-sm);
 
   &:hover {
@@ -118,13 +132,13 @@ a {
 
   &:focus-visible {
     color: var(--color-primary-focus);
-    outline: 2px solid var(--color-primary-focus);
-    outline-offset: 2px;
-    border-radius: var(--radius-sm);
+    text-decoration: underline;
+    outline: none;
   }
 
   &:active {
     color: var(--color-primary-active);
+    text-decoration: underline;
   }
 
   &[aria-disabled="true"],

@@ -1,4 +1,4 @@
-name: Deploy Tearsheet
+name: Deploy Showcase
 
 on:
   push:
@@ -25,18 +25,12 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: "20.19"
           cache: npm
 
       - run: npm ci
       - run: npm run build
-
-      - name: Assemble site
-        run: |
-          mkdir _site
-          cp -r tearsheet dist _site/
-          echo '<meta http-equiv="refresh" content="0; url=tearsheet/tearsheet.html">' > _site/index.html
-          touch _site/.nojekyll
+      - run: npm run build:showcase
 
       - uses: actions/configure-pages@v5
 

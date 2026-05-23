@@ -3,16 +3,16 @@
 :root {
   --color-primary: var(--color-primary-dark);
   --color-secondary: var(--color-secondary-dark);
+  --color-secondary-fg: var(--color-secondary-fg-dark);
   --color-bg-default: var(--color-bg-default-dark);
   --color-bg-raised: var(--color-bg-raised-dark);
   --color-bg-surface: var(--color-bg-surface-dark);
-  --color-bg-sunken: var(--color-bg-sunken-dark);
   --color-fg-default: var(--color-fg-default-dark);
   --color-fg-emphasis: var(--color-fg-emphasis-dark);
   --color-fg-body: var(--color-fg-body-dark);
   --color-fg-muted: var(--color-fg-muted-dark);
   --color-accent-gold: var(--color-accent-gold-dark);
-  --color-accent-berry: var(--color-accent-berry-dark);
+  --color-accent-grape: var(--color-accent-grape-dark);
   --color-accent-teal: var(--color-accent-teal-dark);
   --color-accent-slate: var(--color-accent-slate-dark);
   --color-success: var(--color-success-dark);
@@ -23,25 +23,30 @@
   --color-primary-focus: var(--color-primary-focus-dark);
   --color-primary-active: var(--color-primary-active-dark);
   --color-primary-disabled: var(--color-primary-disabled-dark);
-  --color-neutral-hover: var(--color-neutral-hover-dark);
-  --color-neutral-focus: var(--color-neutral-focus-dark);
-  --color-neutral-active: var(--color-neutral-active-dark);
-  --color-neutral-disabled: var(--color-neutral-disabled-dark);
+  --color-primary-fg: var(--color-primary-fg-dark);
+  --color-tertiary-fg: var(--color-tertiary-fg-dark);
+  --color-tertiary-hover: var(--color-tertiary-hover-dark);
+  --color-tertiary-focus: var(--color-tertiary-focus-dark);
+  --color-tertiary-active: var(--color-tertiary-active-dark);
+  --color-tertiary-disabled: var(--color-tertiary-disabled-dark);
+  --color-border-default: var(--color-neutral-700);
+  --color-border-focus: var(--color-primary-600);
+  --color-placeholder-focus: var(--color-neutral-400);
 }
 
 [data-theme="light"] {
   --color-primary: var(--color-primary-light);
   --color-secondary: var(--color-secondary-light);
+  --color-secondary-fg: var(--color-secondary-fg-light);
   --color-bg-default: var(--color-bg-default-light);
   --color-bg-raised: var(--color-bg-raised-light);
   --color-bg-surface: var(--color-bg-surface-light);
-  --color-bg-sunken: var(--color-bg-sunken-light);
   --color-fg-default: var(--color-fg-default-light);
   --color-fg-emphasis: var(--color-fg-emphasis-light);
   --color-fg-body: var(--color-fg-body-light);
   --color-fg-muted: var(--color-fg-muted-light);
   --color-accent-gold: var(--color-accent-gold-light);
-  --color-accent-berry: var(--color-accent-berry-light);
+  --color-accent-grape: var(--color-accent-grape-light);
   --color-accent-teal: var(--color-accent-teal-light);
   --color-accent-slate: var(--color-accent-slate-light);
   --color-success: var(--color-success-light);
@@ -52,8 +57,18 @@
   --color-primary-focus: var(--color-primary-focus-light);
   --color-primary-active: var(--color-primary-active-light);
   --color-primary-disabled: var(--color-primary-disabled-light);
-  --color-neutral-hover: var(--color-neutral-hover-light);
-  --color-neutral-focus: var(--color-neutral-focus-light);
-  --color-neutral-active: var(--color-neutral-active-light);
-  --color-neutral-disabled: var(--color-neutral-disabled-light);
+  --color-primary-fg: var(--color-primary-fg-light);
+  --color-tertiary-fg: var(--color-tertiary-fg-light);
+  --color-tertiary-hover: var(--color-tertiary-hover-light);
+  --color-tertiary-focus: var(--color-tertiary-focus-light);
+  --color-tertiary-active: var(--color-tertiary-active-light);
+  --color-tertiary-disabled: var(--color-tertiary-disabled-light);
+  --color-border-default: var(--color-neutral-300);
+  --color-border-focus: var(--color-primary-500);
+  --color-placeholder-focus: var(--color-neutral-600);
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-primary-fg);
 }

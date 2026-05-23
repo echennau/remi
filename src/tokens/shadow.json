@@ -3,7 +3,7 @@
     "$type": "shadow",
     "sm": {
       "$value": {
-        "color": "{color.black}",
+        "color": "color-mix(in oklch, {color.black} 50%, transparent)",
         "offsetX": "{spacing.0}",
         "offsetY": "{spacing.1}",
         "blur": "{spacing.3}"
@@ -11,7 +11,7 @@
     },
     "lg": {
       "$value": {
-        "color": "{color.black}",
+        "color": "color-mix(in oklch, {color.black} 50%, transparent)",
         "offsetX": "{spacing.0}",
         "offsetY": "{spacing.2}",
         "blur": "{spacing.4}"
@@ -19,7 +19,7 @@
     },
     "glow": {
       "$value": {
-        "color": "#ff793b80",
+        "color": "color-mix(in oklch, {color.primary.500} 50%, transparent)",
         "offsetX": "{spacing.0}",
         "offsetY": "{spacing.0}",
         "blur": "{spacing.6}"

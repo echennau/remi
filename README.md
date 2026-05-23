@@ -102,3 +102,22 @@ npm run build
 This runs Style Dictionary to compile tokens into `dist/tokens/`, then copies the stylesheets to `dist/styles/`, fonts to `dist/fonts/`, and `tailwind.css` to `dist/tailwind.css`.
 
 All files are exported from `dist` as specified in `package.json`.
+
+## Publishing to npm
+
+The publish workflow triggers on any tag matching `v*`. To publish a new version:
+
+1 - Bump the version in `package.json`
+2 - Commit the change
+3 - Push a matching git tag:
+
+```sh
+git tag vX.Y.Z
+git push origin vX.Y.Z
+```
+
+The tag push triggers the workflow, which publishes whatever version is in `package.json` at that commit.
+
+## Authors
+
+Ethan Chennault - ethanolchennault@gmail.com

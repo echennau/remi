@@ -36,7 +36,7 @@ StyleDictionary.registerFormat({
           continue;
         }
         if (last === "dark") {
-          const semanticVar = `--${token.name.replace(/-dark$/, "")}`;
+          const semanticVar = `--${path.slice(0, -1).join("-")}`;
           themeLines.push(`${semanticVar}: var(${cssVar})`);
           continue;
         }
@@ -88,7 +88,7 @@ StyleDictionary.registerFormat({
 
 const sd = new StyleDictionary({
   log: { verbosity: "verbose" },
-  source: ["tokens/**/*.json"],
+  source: ["src/tokens/**/*.json"],
   platforms: {
     css: {
       transformGroup: "css",

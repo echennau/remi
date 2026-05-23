@@ -27,18 +27,18 @@
     "./*": "./dist/*"
   },
   "scripts": {
-    "build": "rm -rf dist && node build.js && cp -r ./styles ./dist && cp -r ./fonts ./dist",
-    "tearsheet": "npm run build && http-server . -p 3000 -o /tearsheet/tearsheet.html -c-1",
+    "build": "rm -rf dist && node build.js && cp -r ./src/styles ./dist && cp -r ./src/fonts ./dist",
+    "dev": "npm run build && vite",
+    "build:showcase": "npm run build && vite build",
     "format": "prettier --write .",
     "prepare": "npm run build",
     "prepublishOnly": "npm run format"
   },
   "devDependencies": {
-    "@playwright/test": "^1.59.1",
     "@tailwindcss/cli": "^4.2.4",
-    "http-server": "^14.1.1",
     "prettier": "^3.8.3",
     "style-dictionary": "^5.4.0",
-    "tailwindcss": "^4.2.4"
+    "tailwindcss": "^4.2.4",
+    "vite": "^8.0.14"
   }
 }
