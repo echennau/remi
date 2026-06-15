@@ -1,9 +1,6 @@
 @import url("../dist/styles/index.css");
 
 body {
-  background: var(--color-bg-default);
-  color: var(--color-fg-default);
-  font: var(--typography-body);
   padding: var(--spacing-12) var(--spacing-16);
   max-width: 960px;
   margin: 0 auto;

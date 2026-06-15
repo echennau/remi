@@ -7,8 +7,10 @@
   --color-bg-default: var(--color-bg-default-dark);
   --color-bg-raised: var(--color-bg-raised-dark);
   --color-bg-surface: var(--color-bg-surface-dark);
+  /* default text color when otherwise unspecified by tag level styling */
   --color-fg-default: var(--color-fg-default-dark);
   --color-fg-emphasis: var(--color-fg-emphasis-dark);
+  /* body is softer than default, meant for long text */
   --color-fg-body: var(--color-fg-body-dark);
   --color-fg-muted: var(--color-fg-muted-dark);
   --color-accent-gold: var(--color-accent-gold-dark);
@@ -66,9 +68,4 @@
   --color-border-default: var(--color-neutral-300);
   --color-border-focus: var(--color-primary-500);
   --color-placeholder-focus: var(--color-neutral-600);
-}
-
-::selection {
-  background-color: var(--color-primary);
-  color: var(--color-primary-fg);
 }
