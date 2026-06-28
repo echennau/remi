@@ -8,6 +8,11 @@ const execAsync = promisify(exec);
 export default defineConfig({
   root: "showcase",
   base: "./",
+  resolve: {
+    alias: {
+      "@tokens": path.resolve("dist/tokens/tokens.json"),
+    },
+  },
   build: {
     // output directory for gh pages
     outDir: "../_site",
