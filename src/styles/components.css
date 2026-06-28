@@ -327,9 +327,10 @@ textarea,
 select {
   background: transparent;
   color: var(--color-fg-default);
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-sm);
-  padding: var(--spacing-2);
+  border: none;
+  border-bottom: 1px solid var(--color-border-default);
+  border-radius: 0;
+  padding: var(--spacing-2) 0;
   font: var(--typography-body);
   transition: border-color var(--duration-sm);
 
@@ -339,7 +340,7 @@ select {
 
   &:hover,
   &.is-hover {
-    border-color: var(--color-fg-default);
+    border-bottom-color: var(--color-fg-default);
   }
 
   &:focus-visible,
@@ -347,7 +348,7 @@ select {
   &:active,
   &.is-active {
     outline: none;
-    border-color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
 
     &::placeholder {
       color: var(--color-placeholder-focus);
@@ -358,7 +359,7 @@ select {
   &[aria-disabled="true"],
   &.is-disabled {
     color: var(--color-fg-muted);
-    border-color: var(--color-border-default);
+    border-bottom-color: var(--color-border-default);
     cursor: not-allowed;
     pointer-events: none;
     transition: none;
@@ -383,13 +384,13 @@ option {
 
 label {
   font: var(--typography-eyebrow);
+  font-size: 0.625rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-fg-muted);
 }
 
-/* label wrapping an input renders the label text as a part of the input's border */
-/* TODO: not sure if I like the padding on this, looks a bit too tight */
+/* label wrapping an input - label text floats above the bottom border */
 label:has(
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(
       [type="file"]
@@ -399,20 +400,19 @@ label:has(
 ) {
   position: relative;
   display: block;
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-sm);
-  padding: var(--spacing-2);
+  border: none;
+  border-bottom: 1px solid var(--color-border-default);
+  border-radius: 0;
+  padding: var(--spacing-4) 0 var(--spacing-2);
   cursor: text;
   transition: border-color var(--duration-sm);
 
   & > span {
     position: absolute;
     top: 0;
-    left: calc(var(--spacing-3) - var(--spacing-1));
-    transform: translateY(-50%);
-    background: var(--color-bg-default);
-    padding: 0 var(--spacing-1);
+    left: 0;
     font: var(--typography-eyebrow);
+    font-size: 0.625rem;
     color: var(--color-fg-muted);
     pointer-events: none;
     transition: color var(--duration-sm);
@@ -438,7 +438,7 @@ label:has(
   }
 
   &:hover {
-    border-color: var(--color-fg-default);
+    border-bottom-color: var(--color-fg-default);
 
     & > span {
       color: var(--color-fg-emphasis);
@@ -446,7 +446,7 @@ label:has(
   }
 
   &:focus-within {
-    border-color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
     outline: none;
 
     & > span {
