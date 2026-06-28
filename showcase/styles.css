@@ -405,21 +405,6 @@ body {
   background: var(--color-primary-400);
 }
 
-.label-input-pair {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-1);
-}
-.label-input-pair:has(input:hover, label:hover) > label {
-  color: var(--color-fg-emphasis);
-}
-.label-input-pair:has(label:hover) > input {
-  border-color: var(--color-fg-default);
-}
-.label-input-pair:has(input:focus-visible) > label {
-  color: var(--color-primary);
-}
-
 .showcase-nav {
   position: sticky;
   top: 0;

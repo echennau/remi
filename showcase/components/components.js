@@ -169,41 +169,24 @@ export function renderLabelField() {
   const sec = mkSection("Label / Input");
   const structTable = el("div", "struct-table");
 
-  const ex1Wrap = el("div", "label-input-pair");
-  const ex1Label = el("label");
-  ex1Label.setAttribute("for", "demo-external-input");
-  ex1Label.textContent = "Label";
-  const ex1Input = el("input");
-  ex1Input.type = "text";
-  ex1Input.id = "demo-external-input";
-  ex1Input.placeholder = "Input target";
-  ex1Wrap.append(ex1Label, ex1Input);
-  const r1Demo = el("div", "struct-cell-demo");
-  r1Demo.append(ex1Wrap);
-  const r1Code = el("div", "struct-cell-code");
-  r1Code.append(
-    mkCode(`<label for="input">Label</label>
-<input id="input" type="text" placeholder="Input target" />`),
-  );
-  structTable.append(r1Demo, r1Code);
-
-  const fieldLabel = el("label", "field");
+  const fieldLabel = el("label");
   const fieldSpan = el("span");
   fieldSpan.textContent = "Label";
   const fieldInput = el("input");
   fieldInput.type = "text";
   fieldInput.placeholder = "Input target";
   fieldLabel.append(fieldSpan, fieldInput);
-  const r2Demo = el("div", "struct-cell-demo");
-  r2Demo.append(fieldLabel);
-  const r2Code = el("div", "struct-cell-code");
-  r2Code.append(
-    mkCode(`<label class="field">
+
+  const demo = el("div", "struct-cell-demo");
+  demo.append(fieldLabel);
+  const codeCell = el("div", "struct-cell-code");
+  codeCell.append(
+    mkCode(`<label>
   <span>Label</span>
   <input type="text" placeholder="Input target" />
 </label>`),
   );
-  structTable.append(r2Demo, r2Code);
+  structTable.append(demo, codeCell);
 
   sec.append(structTable);
   return sec;
@@ -211,21 +194,84 @@ export function renderLabelField() {
 
 export function renderFieldsetLegend() {
   const sec = mkSection("Fieldset / Legend");
+  const structTable = el("div", "struct-table");
+
   const fsEl = el("fieldset");
   const lgEl = el("legend");
   lgEl.textContent = "Legend";
   const lb = el("p");
   lb.textContent = "Fieldset child";
   fsEl.append(lgEl, lb);
-  sec.append(fsEl);
+
+  const demo = el("div", "struct-cell-demo");
+  demo.append(fsEl);
+  const codeCell = el("div", "struct-cell-code");
+  codeCell.append(mkCode(`<fieldset>
+  <legend>Legend</legend>
+  <p>Fieldset child</p>
+</fieldset>`));
+
+  structTable.append(demo, codeCell);
+  sec.append(structTable);
   return sec;
 }
 
 export function renderDetailsSummary() {
   const sec = mkSection("Details / Summary");
-  sec.append(
-    mkDetails("Collapsed", "Hidden content visible on expand."),
-    mkDetails("Expanded", "Visible content when details is open.", true),
-  );
+  const structTable = el("div", "struct-table");
+
+  const rows = [
+    { open: false, summary: "Collapsed", body: "Hidden content visible on expand." },
+    { open: true, summary: "Expanded", body: "Visible content when details is open." },
+  ];
+
+  rows.forEach(({ open, summary, body }) => {
+    const demo = el("div", "struct-cell-demo");
+    demo.append(mkDetails(summary, body, open));
+
+    const codeCell = el("div", "struct-cell-code");
+    codeCell.append(mkCode(open
+      ? `<details open>\n  <summary>${summary}</summary>\n  <p>${body}</p>\n</details>`
+      : `<details>\n  <summary>${summary}</summary>\n  <p>${body}</p>\n</details>`
+    ));
+
+    structTable.append(demo, codeCell);
+  });
+
+  sec.append(structTable);
+  return sec;
+}
+
+export function renderMark() {
+  const sec = mkSection("Mark / Highlight");
+  const structTable = el("div", "struct-table");
+
+  const variants = [
+    { cls: "", code: "<mark>highlighted text</mark>" },
+    { cls: "highlight-gold", code: '<mark class="highlight-gold">highlighted text</mark>' },
+    { cls: "highlight-lime", code: '<mark class="highlight-lime">highlighted text</mark>' },
+    { cls: "highlight-violet", code: '<mark class="highlight-violet">highlighted text</mark>' },
+    { cls: "highlight-rose", code: '<mark class="highlight-rose">highlighted text</mark>' },
+  ];
+
+  variants.forEach(({ cls: variantCls, code }) => {
+    const p = el("p");
+    p.append(
+      document.createTextNode("The quick brown fox "),
+      el("mark", variantCls),
+      document.createTextNode(" the lazy dog."),
+    );
+    p.querySelector("mark").textContent = "jumps over";
+
+    const demo = el("div", "struct-cell-demo");
+    demo.append(p);
+
+    const codeCell = el("div", "struct-cell-code");
+    codeCell.append(mkCode(code));
+
+    structTable.append(demo, codeCell);
+  });
+
+  sec.append(structTable);
   return sec;
 }
