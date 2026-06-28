@@ -80,28 +80,28 @@
           "$value": "oklch(0.46 0.16 78)"
         }
       },
-      "grape": {
+      "lime": {
         "light": {
-          "$value": "oklch(0.63 0.18 314)"
+          "$value": "oklch(0.63 0.16 168)"
         },
         "dark": {
-          "$value": "oklch(0.46 0.18 314)"
+          "$value": "oklch(0.46 0.16 168)"
         }
       },
-      "teal": {
+      "violet": {
         "light": {
-          "$value": "oklch(0.63 0.15 194)"
+          "$value": "oklch(0.63 0.16 258)"
         },
         "dark": {
-          "$value": "oklch(0.46 0.15 194)"
+          "$value": "oklch(0.46 0.16 258)"
         }
       },
-      "slate": {
+      "rose": {
         "light": {
-          "$value": "oklch(0.63 0.07 220)"
+          "$value": "oklch(0.63 0.16 348)"
         },
         "dark": {
-          "$value": "oklch(0.46 0.07 220)"
+          "$value": "oklch(0.46 0.16 348)"
         }
       }
     },
