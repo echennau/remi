@@ -10,8 +10,9 @@ import {
   renderLabelField,
   renderFieldsetLegend,
   renderDetailsSummary,
+  renderMark,
 } from "./components/components.js";
-import tokens from "../dist/tokens/tokens.json";
+import tokens from "@tokens";
 
 function render(t) {
   const app = document.getElementById("app");
@@ -39,6 +40,7 @@ function render(t) {
     renderLabelField(),
     renderFieldsetLegend(),
     renderDetailsSummary(),
+    renderMark(),
   );
 
   app.append(theme, typo, comp);
