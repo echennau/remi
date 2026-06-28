@@ -12,9 +12,9 @@
   --color-fg-body: var(--color-fg-body-dark);
   --color-fg-muted: var(--color-fg-muted-dark);
   --color-accent-gold: var(--color-accent-gold-dark);
-  --color-accent-grape: var(--color-accent-grape-dark);
-  --color-accent-teal: var(--color-accent-teal-dark);
-  --color-accent-slate: var(--color-accent-slate-dark);
+  --color-accent-lime: var(--color-accent-lime-dark);
+  --color-accent-violet: var(--color-accent-violet-dark);
+  --color-accent-rose: var(--color-accent-rose-dark);
   --color-success: var(--color-success-dark);
   --color-warning: var(--color-warning-dark);
   --color-danger: var(--color-danger-dark);
@@ -46,9 +46,9 @@
   --color-fg-body: var(--color-fg-body-light);
   --color-fg-muted: var(--color-fg-muted-light);
   --color-accent-gold: var(--color-accent-gold-light);
-  --color-accent-grape: var(--color-accent-grape-light);
-  --color-accent-teal: var(--color-accent-teal-light);
-  --color-accent-slate: var(--color-accent-slate-light);
+  --color-accent-lime: var(--color-accent-lime-light);
+  --color-accent-violet: var(--color-accent-violet-light);
+  --color-accent-rose: var(--color-accent-rose-light);
   --color-success: var(--color-success-light);
   --color-warning: var(--color-warning-light);
   --color-danger: var(--color-danger-light);
