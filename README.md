@@ -16,9 +16,11 @@ npm install @echennau/remi
 
 These imports require a bundler (Vite, webpack, etc.) or TailwindCSS v4. Without one, reference the files directly, such as `./node_modules/@echennau/remi/dist/styles/index.css`.
 
-#### Stylesheet
+Remi can be used on its own or alongside Tailwind.
 
-Includes all design tokens, base theming, and typography styles.
+#### Standalone
+
+Includes all design tokens, base theming, typography, and component styles.
 
 ```css
 @import "@echennau/remi";
@@ -31,14 +33,32 @@ Or, import individual stylesheets:
 @import "@echennau/remi/styles/theme.css";
 /* Tag-level typography styles */
 @import "@echennau/remi/styles/typography.css";
+/* Component styles */
+@import "@echennau/remi/styles/components.css";
 ```
 
-#### Tailwind config
+#### With Tailwind (v4)
 
-If you want Tailwind utility classes and the `@theme` configuration, import it separately:
+`@echennau/remi/tailwind.css` maps Remi's tokens to Tailwind utility classes (`bg-primary`, `text-muted`, `p-4`, `type-h1`, etc.). It does not import Tailwind itself, so import Tailwind first:
 
 ```css
+@import "tailwindcss";
+@import "@echennau/remi";
 @import "@echennau/remi/tailwind.css";
+```
+
+Order matters: `tailwindcss` must come before `@echennau/remi`. Both place their styles in Tailwind's `base` layer, so if Remi comes first, Tailwind's Preflight reset overrides Remi's typography and component styles.
+
+To use only Remi's utility classes without its typography and component styles, omit `@import "@echennau/remi";`.
+
+#### Theming
+
+Remi defaults to the dark theme.
+Set `data-theme="light"` on any element (usually `<html>`) to switch it and its children to the light theme.
+Themed utilities such as `bg-primary` update automatically, and Tailwind's `dark:` variant follows the same attribute instead of the OS color scheme.
+
+```html
+<html data-theme="light"></html>
 ```
 
 #### Tokens only
@@ -120,4 +140,4 @@ The tag push triggers the workflow, which publishes whatever version is in `pack
 
 ## Authors
 
-Ethan Chennault - ethanolchennault@gmail.com
+Ethan Chennault - <ethanolchennault@gmail.com>

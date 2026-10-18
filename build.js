@@ -56,7 +56,6 @@ StyleDictionary.registerFormat({
     }
 
     const lines = [
-      '@import "tailwindcss";',
       '@import "./styles/theme.css";',
       "",
       // dark is the default theme, so dark: applies unless under [data-theme="light"]
