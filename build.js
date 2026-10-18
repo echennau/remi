@@ -9,6 +9,7 @@ StyleDictionary.registerFormat({
     const themeLines = [];
     const bgUtilities = new Map();
     const fgUtilities = new Map();
+    const borderUtilities = new Map();
     const typographyTokens = new Map();
 
     for (const token of tokens) {
@@ -32,6 +33,11 @@ StyleDictionary.registerFormat({
           fgUtilities.set(name, `--color-fg-${name}`);
           continue;
         }
+        if (path[1] === "border" && last === "dark") {
+          const name = path.slice(2, -1).join("-");
+          borderUtilities.set(name, `--color-border-${name}`);
+          continue;
+        }
         if (last === "light") {
           continue;
         }
@@ -53,6 +59,9 @@ StyleDictionary.registerFormat({
       '@import "tailwindcss";',
       '@import "./styles/theme.css";',
       "",
+      // dark is the default theme, so dark: applies unless under [data-theme="light"]
+      '@custom-variant dark (&:where(:not([data-theme="light"], [data-theme="light"] *)));',
+      "",
       "@theme inline reference {",
       ...themeLines.map((l) => `  ${l};`),
       "}",
@@ -72,6 +81,15 @@ StyleDictionary.registerFormat({
       lines.push(`@utility text-${name} {`, `  color: var(${ref});`, `}`, "");
     }
 
+    for (const [name, ref] of borderUtilities) {
+      lines.push(
+        `@utility border-${name} {`,
+        `  border-color: var(${ref});`,
+        `}`,
+        "",
+      );
+    }
+
     for (const [name, token] of typographyTokens) {
       const extras = token.original.$extensions?.remi ?? {};
       const utilLines = [`  font: var(--typography-${name});`];
@@ -83,6 +101,42 @@ StyleDictionary.registerFormat({
     }
 
     return lines.join("\n");
+  },
+});
+
+// Register themed CSS variables format, mapping semantic colors to their dark/light values
+StyleDictionary.registerFormat({
+  name: "css/theme",
+  format: ({ dictionary }) => {
+    const root = [];
+    const light = [];
+
+    for (const token of dictionary.allTokens) {
+      const { path } = token;
+      const last = path.at(-1);
+      if (path[0] !== "color" || (last !== "dark" && last !== "light")) {
+        continue;
+      }
+      const semanticVar = `--${path.slice(0, -1).join("-")}`;
+      const target = last === "dark" ? root : light;
+      if (last === "dark" && token.$description) {
+        target.push(`  /* ${token.$description} */`);
+      }
+      target.push(`  ${semanticVar}: var(--${token.name});`);
+    }
+
+    return [
+      '@import "../tokens/tokens.css";',
+      "",
+      ":root {",
+      ...root,
+      "}",
+      "",
+      '[data-theme="light"] {',
+      ...light,
+      "}",
+      "",
+    ].join("\n");
   },
 });
 
@@ -109,6 +163,11 @@ const sd = new StyleDictionary({
       transformGroup: "css",
       buildPath: "dist/",
       files: [{ destination: "tailwind.css", format: "tailwind/css" }],
+    },
+    theme: {
+      transformGroup: "css",
+      buildPath: "dist/styles/",
+      files: [{ destination: "theme.css", format: "css/theme" }],
     },
   },
 });
