@@ -37,7 +37,7 @@ StyleDictionary.registerFormat({
         }
         if (last === "dark") {
           const semanticVar = `--${path.slice(0, -1).join("-")}`;
-          themeLines.push(`${semanticVar}: var(${cssVar})`);
+          themeLines.push(`${semanticVar}: var(${semanticVar})`);
           continue;
         }
         // raw palette (no dark/light suffix)
@@ -53,7 +53,7 @@ StyleDictionary.registerFormat({
       '@import "tailwindcss";',
       '@import "./styles/theme.css";',
       "",
-      "@theme inline {",
+      "@theme inline reference {",
       ...themeLines.map((l) => `  ${l};`),
       "}",
       "",
