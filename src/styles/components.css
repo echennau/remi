@@ -52,7 +52,9 @@ a {
 }
 
 button,
-input[type="submit"] {
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
   cursor: pointer;
   border: none;
   background: none;
@@ -63,10 +65,6 @@ input[type="submit"] {
     background-color var(--duration-sm),
     color var(--duration-sm),
     border-color var(--duration-sm);
-}
-
-button.primary,
-input[type="submit"].primary {
   background-color: var(--color-primary);
   color: var(--color-primary-fg);
 
@@ -101,7 +99,9 @@ input[type="submit"].primary {
 }
 
 button.secondary,
-input[type="submit"].secondary {
+input[type="submit"].secondary,
+input[type="button"].secondary,
+input[type="reset"].secondary {
   background-color: transparent;
   color: var(--color-secondary-fg);
   border: 1px solid var(--color-secondary);
@@ -141,7 +141,9 @@ input[type="submit"].secondary {
 }
 
 button.tertiary,
-input[type="submit"].tertiary {
+input[type="submit"].tertiary,
+input[type="button"].tertiary,
+input[type="reset"].tertiary {
   background-color: transparent;
   color: var(--color-tertiary-fg);
 
@@ -168,6 +170,7 @@ input[type="submit"].tertiary {
   &:disabled,
   &[aria-disabled="true"],
   &.is-disabled {
+    background-color: transparent;
     color: var(--color-fg-muted);
     cursor: not-allowed;
     pointer-events: none;
@@ -175,7 +178,9 @@ input[type="submit"].tertiary {
 }
 
 button.destructive,
-input[type="submit"].destructive {
+input[type="submit"].destructive,
+input[type="button"].destructive,
+input[type="reset"].destructive {
   background-color: var(--color-danger);
   color: var(--color-primary-fg);
 
@@ -263,7 +268,9 @@ input[type="checkbox"] {
   }
 }
 
-input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not(
+    [type="button"]
+  ):not([type="reset"]),
 textarea,
 select {
   width: 100%;
@@ -539,7 +546,9 @@ input[type="radio"] {
 
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(
     [type="file"]
-  ):not([type="color"]):not([type="submit"]),
+  ):not([type="color"]):not([type="submit"]):not([type="button"]):not(
+    [type="reset"]
+  ),
 textarea,
 select {
   background: transparent;
