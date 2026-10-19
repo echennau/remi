@@ -166,6 +166,34 @@
           "$value": "{color.neutral.600}"
         }
       }
+    },
+    "border": {
+      "default": {
+        "dark": {
+          "$value": "{color.neutral.700}"
+        },
+        "light": {
+          "$value": "{color.neutral.300}"
+        }
+      },
+      "focus": {
+        "dark": {
+          "$value": "{color.primary.600}"
+        },
+        "light": {
+          "$value": "{color.primary.500}"
+        }
+      }
+    },
+    "placeholder": {
+      "focus": {
+        "dark": {
+          "$value": "{color.neutral.400}"
+        },
+        "light": {
+          "$value": "{color.neutral.600}"
+        }
+      }
     }
   }
 }

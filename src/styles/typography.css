@@ -103,6 +103,7 @@ h4 {
 }
 
 h5,
+h6,
 .eyebrow {
   font: var(--typography-eyebrow);
   letter-spacing: 0.14em;

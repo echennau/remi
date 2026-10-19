@@ -317,10 +317,6 @@ body {
 .demo-cell {
   vertical-align: middle;
 }
-.demo-cell input:not([type="checkbox"]):not([type="radio"]),
-.demo-cell select {
-  width: 100%;
-}
 .check-pair {
   display: flex;
   align-items: center;
@@ -358,7 +354,8 @@ body {
 
 .struct-table {
   display: grid;
-  grid-template-columns: auto 1fr;
+  /* minmax(0, ...) lets long code lines scroll instead of widening the column */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--spacing-3) var(--spacing-6);
   align-items: center;
   margin-bottom: var(--spacing-3);

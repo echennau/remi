@@ -7,9 +7,15 @@ import { renderShadows } from "./components/shadows.js";
 import { renderMotion } from "./components/motion.js";
 import {
   renderStates,
+  renderMoreInputs,
   renderLabelField,
   renderFieldsetLegend,
   renderDetailsSummary,
+  renderLists,
+  renderDescriptionList,
+  renderBlockquote,
+  renderRule,
+  renderKbd,
   renderMark,
 } from "./components/components.js";
 import tokens from "@tokens";
@@ -37,9 +43,15 @@ function render(t) {
   comp.append(
     renderColorReference(t.color),
     renderStates(),
+    renderMoreInputs(),
     renderLabelField(),
     renderFieldsetLegend(),
     renderDetailsSummary(),
+    renderLists(),
+    renderDescriptionList(),
+    renderBlockquote(),
+    renderRule(),
+    renderKbd(),
     renderMark(),
   );
 
