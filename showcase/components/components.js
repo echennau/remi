@@ -242,6 +242,66 @@ export function renderDetailsSummary() {
   return sec;
 }
 
+// static demos where the rendered markup and the displayed code are the same
+function mkHtmlSection(label, snippets) {
+  const sec = mkSection(label);
+  const structTable = el("div", "struct-table");
+
+  snippets.forEach((html) => {
+    const demo = el("div", "struct-cell-demo");
+    demo.innerHTML = html;
+
+    const codeCell = el("div", "struct-cell-code");
+    codeCell.append(mkCode(html));
+
+    structTable.append(demo, codeCell);
+  });
+
+  sec.append(structTable);
+  return sec;
+}
+
+export function renderLists() {
+  return mkHtmlSection("Lists", [
+    `<ul>\n  <li>Lorem ipsum dolor sit amet</li>\n  <li>Consectetur adipiscing elit\n    <ul>\n      <li>Sed do eiusmod tempor</li>\n      <li>Incididunt ut labore</li>\n    </ul>\n  </li>\n</ul>`,
+    `<ol>\n  <li>Ut enim ad minim veniam</li>\n  <li>Quis nostrud exercitation</li>\n  <li>Ullamco laboris nisi</li>\n</ol>`,
+  ]);
+}
+
+export function renderDescriptionList() {
+  return mkHtmlSection("Description List", [
+    `<dl>\n  <dt>Lorem ipsum</dt>\n  <dd>Dolor sit amet, consectetur adipiscing elit.</dd>\n  <dt>Sed do eiusmod</dt>\n  <dd>Tempor incididunt ut labore et dolore.</dd>\n  <dd>Magna aliqua ut enim ad minim veniam.</dd>\n</dl>`,
+  ]);
+}
+
+export function renderBlockquote() {
+  return mkHtmlSection("Blockquote", [
+    `<blockquote>\n  <p>Design is not just what it looks like. Design is how it works.</p>\n  <cite>Steve Jobs</cite>\n</blockquote>`,
+  ]);
+}
+
+export function renderRule() {
+  return mkHtmlSection("Horizontal Rule", [
+    `<p>Above the rule.</p>\n<hr />\n<p>Below the rule.</p>`,
+  ]);
+}
+
+export function renderKbd() {
+  return mkHtmlSection("Keyboard Input", [
+    `<p>Press <kbd>Ctrl</kbd> + <kbd>K</kbd> to search.</p>`,
+  ]);
+}
+
+export function renderMoreInputs() {
+  return mkHtmlSection("More Inputs", [
+    `<input type="range" value="60" />`,
+    `<input type="color" value="#e8590c" />`,
+    `<input type="file" />`,
+    `<input type="datetime-local" />`,
+    `<input type="submit" class="primary" value="Submit" />`,
+  ]);
+}
+
 export function renderMark() {
   const sec = mkSection("Mark / Highlight");
   const structTable = el("div", "struct-table");

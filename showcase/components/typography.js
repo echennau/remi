@@ -8,7 +8,7 @@ const TYPO_MAP = {
   h5: { tag: "h5" },
   lede: { tag: "p", cls: "lede" },
   body: { tag: "p" },
-  eyebrow: { tag: "h5", alias: "h5" },
+  eyebrow: { tag: "h5", alias: "h5 / h6" },
   mono: { tag: "code" },
 };
 

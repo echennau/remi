@@ -12,6 +12,11 @@ body {
   font: var(--typography-body);
 }
 
+:root {
+  /* fallback tint for native controls without custom styling */
+  accent-color: var(--color-primary);
+}
+
 a {
   color: var(--color-primary);
   text-decoration: underline;
@@ -46,7 +51,8 @@ a {
   }
 }
 
-button {
+button,
+input[type="submit"] {
   cursor: pointer;
   border: none;
   background: none;
@@ -59,7 +65,8 @@ button {
     border-color var(--duration-sm);
 }
 
-button.primary {
+button.primary,
+input[type="submit"].primary {
   background-color: var(--color-primary);
   color: var(--color-primary-fg);
 
@@ -93,7 +100,8 @@ button.primary {
   }
 }
 
-button.secondary {
+button.secondary,
+input[type="submit"].secondary {
   background-color: transparent;
   color: var(--color-secondary-fg);
   border: 1px solid var(--color-secondary);
@@ -132,7 +140,8 @@ button.secondary {
   }
 }
 
-button.tertiary {
+button.tertiary,
+input[type="submit"].tertiary {
   background-color: transparent;
   color: var(--color-tertiary-fg);
 
@@ -165,7 +174,8 @@ button.tertiary {
   }
 }
 
-button.destructive {
+button.destructive,
+input[type="submit"].destructive {
   background-color: var(--color-danger);
   color: var(--color-primary-fg);
 
@@ -253,6 +263,213 @@ input[type="checkbox"] {
   }
 }
 
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+textarea,
+select {
+  width: 100%;
+}
+
+/* WebKit and Firefox pseudo-elements must stay in separate rules,
+   since a browser drops any selector list containing a pseudo it doesn't know */
+input[type="range"] {
+  --track-height: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  height: var(--spacing-4);
+  background: transparent;
+  cursor: pointer;
+
+  &::-webkit-slider-runnable-track {
+    height: var(--track-height);
+    border-radius: var(--radius-full);
+    background: var(--color-bg-raised);
+  }
+
+  &::-moz-range-track {
+    height: var(--track-height);
+    border-radius: var(--radius-full);
+    background: var(--color-bg-raised);
+  }
+
+  /* filled portion, Firefox only */
+  &::-moz-range-progress {
+    height: var(--track-height);
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: var(--spacing-4);
+    height: var(--spacing-4);
+    /* centers the thumb on the track: (track height - thumb height) / 2 */
+    margin-top: calc((var(--track-height) - var(--spacing-4)) / 2);
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    transition: transform var(--duration-sm);
+  }
+
+  &::-moz-range-thumb {
+    width: var(--spacing-4);
+    height: var(--spacing-4);
+    border: none;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    transition: transform var(--duration-sm);
+  }
+
+  &:hover::-webkit-slider-thumb,
+  &.is-hover::-webkit-slider-thumb {
+    transform: scale(1.15);
+  }
+
+  &:hover::-moz-range-thumb,
+  &.is-hover::-moz-range-thumb {
+    transform: scale(1.15);
+  }
+
+  &:focus-visible,
+  &.is-focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"],
+  &.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+/* in Firefox the element itself is the track; WebKit uses ::-webkit-progress-bar */
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-raised);
+  overflow: hidden;
+
+  &::-webkit-progress-bar {
+    background: var(--color-bg-raised);
+  }
+
+  &::-webkit-progress-value {
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+    transition: width var(--duration-md);
+  }
+
+  &::-moz-progress-bar {
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+  }
+}
+
+input[type="color"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: var(--spacing-8);
+  padding: 2px;
+  border: 1.5px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color var(--duration-sm);
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    border: none;
+    border-radius: calc(var(--radius-sm) - 4px);
+  }
+
+  &::-moz-color-swatch {
+    border: none;
+    border-radius: calc(var(--radius-sm) - 4px);
+  }
+
+  &:hover,
+  &.is-hover {
+    border-color: var(--color-fg-default);
+  }
+
+  &:focus-visible,
+  &.is-focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"],
+  &.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+/* the selector button matches button.secondary */
+input[type="file"] {
+  font: var(--typography-body);
+  color: var(--color-fg-muted);
+  cursor: pointer;
+
+  &::file-selector-button {
+    font: inherit;
+    color: var(--color-secondary-fg);
+    background-color: transparent;
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-full);
+    padding: var(--spacing-2) var(--spacing-4);
+    margin-right: var(--spacing-3);
+    cursor: pointer;
+    transition:
+      background-color var(--duration-sm),
+      color var(--duration-sm);
+  }
+
+  &:hover::file-selector-button,
+  &.is-hover::file-selector-button {
+    background-color: var(--color-secondary);
+  }
+
+  &:focus-visible,
+  &.is-focus {
+    outline: none;
+
+    &::file-selector-button {
+      background-color: var(--color-secondary);
+      outline: 2px solid var(--color-secondary);
+      outline-offset: 2px;
+    }
+  }
+
+  &:disabled,
+  &[aria-disabled="true"],
+  &.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity var(--duration-sm);
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 label:has(> input[type="checkbox"]) {
   position: relative;
   display: inline-flex;
@@ -322,7 +539,7 @@ input[type="radio"] {
 
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(
     [type="file"]
-  ),
+  ):not([type="color"]):not([type="submit"]),
 textarea,
 select {
   background: transparent;
@@ -545,6 +762,45 @@ td {
 
 tbody tr:last-child td {
   border-bottom: none;
+}
+
+dt {
+  font-weight: 600;
+  color: var(--color-fg-default);
+}
+
+dd {
+  color: var(--color-fg-body);
+  padding-left: var(--spacing-4);
+}
+
+ul,
+ol {
+  padding-left: var(--spacing-5);
+}
+
+li::marker {
+  color: var(--color-fg-muted);
+}
+
+blockquote {
+  border-left: 2px solid var(--color-primary);
+  padding-left: var(--spacing-4);
+  color: var(--color-fg-muted);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border-default);
+  margin: var(--spacing-6) 0;
+}
+
+kbd {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-bottom-width: 2px;
+  border-radius: var(--radius-sm);
+  padding: 0 var(--spacing-1);
 }
 
 ::selection {

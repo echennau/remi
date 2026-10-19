@@ -128,10 +128,13 @@ StyleDictionary.registerFormat({
       '@import "../tokens/tokens.css";',
       "",
       ":root {",
+      // matches browser-drawn UI (date picker, scrollbars) to the theme
+      "  color-scheme: dark;",
       ...root,
       "}",
       "",
       '[data-theme="light"] {',
+      "  color-scheme: light;",
       ...light,
       "}",
       "",
