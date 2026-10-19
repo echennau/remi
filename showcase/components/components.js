@@ -206,10 +206,12 @@ export function renderFieldsetLegend() {
   const demo = el("div", "struct-cell-demo");
   demo.append(fsEl);
   const codeCell = el("div", "struct-cell-code");
-  codeCell.append(mkCode(`<fieldset>
+  codeCell.append(
+    mkCode(`<fieldset>
   <legend>Legend</legend>
   <p>Fieldset child</p>
-</fieldset>`));
+</fieldset>`),
+  );
 
   structTable.append(demo, codeCell);
   sec.append(structTable);
@@ -221,8 +223,16 @@ export function renderDetailsSummary() {
   const structTable = el("div", "struct-table");
 
   const rows = [
-    { open: false, summary: "Collapsed", body: "Hidden content visible on expand." },
-    { open: true, summary: "Expanded", body: "Visible content when details is open." },
+    {
+      open: false,
+      summary: "Collapsed",
+      body: "Hidden content visible on expand.",
+    },
+    {
+      open: true,
+      summary: "Expanded",
+      body: "Visible content when details is open.",
+    },
   ];
 
   rows.forEach(({ open, summary, body }) => {
@@ -230,10 +240,13 @@ export function renderDetailsSummary() {
     demo.append(mkDetails(summary, body, open));
 
     const codeCell = el("div", "struct-cell-code");
-    codeCell.append(mkCode(open
-      ? `<details open>\n  <summary>${summary}</summary>\n  <p>${body}</p>\n</details>`
-      : `<details>\n  <summary>${summary}</summary>\n  <p>${body}</p>\n</details>`
-    ));
+    codeCell.append(
+      mkCode(
+        open
+          ? `<details open>\n  <summary>${summary}</summary>\n  <p>${body}</p>\n</details>`
+          : `<details>\n  <summary>${summary}</summary>\n  <p>${body}</p>\n</details>`,
+      ),
+    );
 
     structTable.append(demo, codeCell);
   });
@@ -308,10 +321,22 @@ export function renderMark() {
 
   const variants = [
     { cls: "", code: "<mark>highlighted text</mark>" },
-    { cls: "highlight-gold", code: '<mark class="highlight-gold">highlighted text</mark>' },
-    { cls: "highlight-lime", code: '<mark class="highlight-lime">highlighted text</mark>' },
-    { cls: "highlight-violet", code: '<mark class="highlight-violet">highlighted text</mark>' },
-    { cls: "highlight-rose", code: '<mark class="highlight-rose">highlighted text</mark>' },
+    {
+      cls: "highlight-gold",
+      code: '<mark class="highlight-gold">highlighted text</mark>',
+    },
+    {
+      cls: "highlight-lime",
+      code: '<mark class="highlight-lime">highlighted text</mark>',
+    },
+    {
+      cls: "highlight-violet",
+      code: '<mark class="highlight-violet">highlighted text</mark>',
+    },
+    {
+      cls: "highlight-rose",
+      code: '<mark class="highlight-rose">highlighted text</mark>',
+    },
   ];
 
   variants.forEach(({ cls: variantCls, code }) => {
